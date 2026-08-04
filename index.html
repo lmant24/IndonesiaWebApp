@@ -1302,17 +1302,13 @@
                     <i class="fa-solid fa-volcano"></i>
                     <span>Attività</span>
                 </button>
-                <button class="nav-btn" id="btn-tab-preparativi" onclick="switchTab('preparativi', this)">
-                    <i class="fa-solid fa-suitcase-rolling"></i>
-                    <span>Valigia</span>
-                </button>
                 <button class="nav-btn" id="btn-tab-pasti" onclick="switchTab('pasti', this)">
                     <i class="fa-solid fa-utensils"></i>
                     <span>Pasti</span>
                 </button>
                 <button class="nav-btn" id="btn-tab-regole" onclick="switchTab('regole', this)">
                     <i class="fa-solid fa-hand-holding-hand"></i>
-                    <span>Regole Galateo</span>
+                    <span>Galateo</span>
                 </button>
                 <button class="nav-btn" id="btn-tab-mappa" onclick="switchTab('mappa', this)">
                     <i class="fa-solid fa-map-location"></i>
@@ -1320,7 +1316,7 @@
                 </button>
                                 <button class="nav-btn" id="btn-tab-grafico" onclick="switchTab('grafico', this)">
                     <i class="fa-solid fa-chart-line"></i>
-                    <span>Grafico Esperienza</span>
+                    <span>Metrics</span>
                 </button>
                                 <button class="nav-btn" id="btn-tab-diario" onclick="switchTab('diario', this)">
                     <i class="fa-solid fa-book-journal-whills"></i>
@@ -1329,6 +1325,10 @@
                 <button class="nav-btn" id="btn-tab-spese" onclick="switchTab('spese', this)">
                     <i class="fa-solid fa-wallet"></i>
                     <span>Costi</span>
+                </button>
+                            <button class="nav-btn" id="btn-tab-preparativi" onclick="switchTab('preparativi', this)">
+                    <i class="fa-solid fa-suitcase-rolling"></i>
+                    <span>Valigia</span>
                 </button>
             </nav>
             <div class="scroll-hint"><i class="fa-solid fa-chevron-right"></i></div>
@@ -2122,7 +2122,350 @@
         </section>
 
 
-                <!-- TAB VALIGIA: PACKING LIST & DOCUMENTI -->
+                
+
+<!-- TAB 6: PASTI E RISTORANTI -->
+        <section id="tab-pasti" class="tab-content">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fa-solid fa-utensils"></i> Guida ai Pasti, Piatti Tipici & Ristoranti</h2>
+            </div>
+
+            <!-- PIATTI TIPICI PER LUOGO -->
+            <div style="margin-bottom: 24px;">
+                <h3 style="font-size: 1.1rem; font-weight: 800; color: #064e3b; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-bowl-food" style="color:var(--primary);"></i> Piatti Tipici Categorizzati per Luogo
+                </h3>
+
+                <!-- GIAVA & YOGYAKARTA -->
+                <div class="card" style="margin-bottom: 16px;">
+                    <div class="card-header">
+                        <h4 class="card-title"><i class="fa-solid fa-location-dot" style="color:var(--primary);"></i> Giava (Yogyakarta & Giava Orientale)</h4>
+                        <span class="badge badge-amber">Cucina Giavanese</span>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 10px;">
+                        <!-- Gudeg -->
+                        <div style="background: #fafafa; border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column;">
+                            <img onerror="this.onerror=null; this.src='https://picsum.photos/600/300';" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80" alt="Gudeg Yogyakarta" style="width: 100%; height: 140px; object-fit: cover;">
+                            <div style="padding: 12px; flex: 1;">
+                                <strong style="color: var(--text-main); font-size: 0.95rem;">Gudeg (Yogyakarta)</strong>
+                                <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Piatto iconico di Jogja a base di giaca giovane (jackfruit) cotta lentamente nel latte di cocco con zucchero di palma ed erbe speziate. Servito con riso, uovo sodo e pollo.</p>
+                            </div>
+                        </div>
+
+                        <!-- Bakpia -->
+                        <div style="background: #fafafa; border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column;">
+                            <img onerror="this.onerror=null; this.src='https://picsum.photos/600/300';" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Bakpia Pathok" style="width: 100%; height: 140px; object-fit: cover;">
+                            <div style="padding: 12px; flex: 1;">
+                                <strong style="color: var(--text-main); font-size: 0.95rem;">Bakpia Pathok (Yogyakarta)</strong>
+                                <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Famoso dolcetto sfogliato cotto al forno, tradizionalmente ripieno di pasta dolce di fagioli mungo, cioccolato o formaggio. Il souvenir gastronomico n.1 di Jogja!</p>
+                            </div>
+                        </div>
+
+                        <!-- Rawon -->
+                        <div style="background: #fafafa; border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column;">
+                            <img onerror="this.onerror=null; this.src='https://picsum.photos/600/300';" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=80" alt="Rawon East Java" style="width: 100%; height: 140px; object-fit: cover;">
+                            <div style="padding: 12px; flex: 1;">
+                                <strong style="color: var(--text-main); font-size: 0.95rem;">Rawon (Giava Orientale)</strong>
+                                <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Zuppa di manzo ricca e speziata dal caratteristico colore nero intenso, dato dalle noci nere tradizionali *Kluwek*. Sapore profondo ed avvolgente.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BALI -->
+                <div class="card" style="margin-bottom: 16px;">
+                    <div class="card-header">
+                        <h4 class="card-title"><i class="fa-solid fa-location-dot" style="color:var(--primary);"></i> Isola di Bali</h4>
+                        <span class="badge badge-green">Cucina Balinese</span>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 10px;">
+                        <!-- Babi Guling -->
+                        <div style="background: #fafafa; border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column;">
+                            <img onerror="this.onerror=null; this.src='https://picsum.photos/600/300';" src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Babi Guling Bali" style="width: 100%; height: 140px; object-fit: cover;">
+                            <div style="padding: 12px; flex: 1;">
+                                <strong style="color: var(--text-main); font-size: 0.95rem;">Babi Guling (Bali)</strong>
+                                <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Maialino da latte intero speziato e cotto lentamente allo spiedo su fuoco a legna. Pelle croccante, carne tenera e ricca di aroma di curcuma e lemongrass.</p>
+                            </div>
+                        </div>
+
+                        <!-- Ayam Betutu -->
+                        <div style="background: #fafafa; border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column;">
+                            <img onerror="this.onerror=null; this.src='https://picsum.photos/600/300';" src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=600&q=80" alt="Ayam Betutu Bali" style="width: 100%; height: 140px; object-fit: cover;">
+                            <div style="padding: 12px; flex: 1;">
+                                <strong style="color: var(--text-main); font-size: 0.95rem;">Ayam / Bebek Betutu (Bali)</strong>
+                                <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Pollo o anatra avvolta in foglie di banano e cotta al vapore/forno per ore con una miscela complessa di spezie balinesi (*Bumbu Bali*). Molto saporito e piccante.</p>
+                            </div>
+                        </div>
+
+                        <!-- Sate Lilit -->
+                        <div style="background: #fafafa; border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column;">
+                            <img onerror="this.onerror=null; this.src='https://picsum.photos/600/300';" src="https://images.unsplash.com/photo-1529543544282-ea669407fda3?auto=format&fit=crop&w=600&q=80" alt="Sate Lilit Bali" style="width: 100%; height: 140px; object-fit: cover;">
+                            <div style="padding: 12px; flex: 1;">
+                                <strong style="color: var(--text-main); font-size: 0.95rem;">Sate Lilit (Bali)</strong>
+                                <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Spiedini tipici balinesi a base di carne tritata (maiale, pollo o pesce) arrotolata attorno a bastoncini di lemongrass (cannella o bambù) e grigliata sui carboni.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KOMODO & FLORES -->
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title"><i class="fa-solid fa-location-dot" style="color:var(--primary);"></i> Flores & Labuan Bajo (Komodo)</h4>
+                        <span class="badge badge-purple">Pesce Fresco & Mare</span>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 10px;">
+                        <!-- Ikan Bakar -->
+                        <div style="background: #fafafa; border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column;">
+                            <img onerror="this.onerror=null; this.src='https://picsum.photos/600/300';" src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80" alt="Ikan Bakar Labuan Bajo" style="width: 100%; height: 140px; object-fit: cover;">
+                            <div style="padding: 12px; flex: 1;">
+                                <strong style="color: var(--text-main); font-size: 0.95rem;">Ikan Bakar & Sambal Matah (Labuan Bajo)</strong>
+                                <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Pesce fresco pescato in giornata grigliato sui carboni al night market di Labuan Bajo, servito con la squisita salsa cruda *Sambal Matah* (scallogno, peperoncino, lime e olio caldo).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RISTORANTI CONSIGLIATI -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Consigli Ristoranti a Yogyakarta</h3>
+                    <span class="badge badge-green">Giava</span>
+                </div>
+                <p>• <strong>Kesuma Restaurant:</strong> Cucina tipica locale, stile familiare e accogliente.</p>
+                <p>• <strong>Loko Cafe Malioboro:</strong> Vicinissimo alla stazione dei treni.</p>
+                <p>• <strong>The House of Raminten:</strong> Iconico locale di cucina tipica giavanese.</p>
+                <p>• <strong>Mediterranea:</strong> Cucina francese e mediterranea.</p>
+            </div>
+
+            <div class="card" id="meal-tegallalang">
+                <div class="card-header">
+                    <h3 class="card-title">Pranzo sulle Risaie di Tegallalang (7 Agosto)</h3>
+                    <span class="badge badge-amber">Ubud</span>
+                </div>
+                <p>• <strong>Tis Cafe:</strong> Edificio in bambù a più livelli con piscina a sfioro e vista sulle risaie.</p>
+                <p>• <strong>Tebasari Resto:</strong> Gazebo privati in bambù galleggianti su laghetti con pesci.</p>
+                <p>• <strong>Uma Ceking Resto:</strong> Informale con cucina tipica (Nasi Goreng / Mie Goreng).</p>
+                <button class="info-modal-btn" onclick="openDetailModal('meal-tegallalang')"><i class="fa-solid fa-circle-info"></i> Info & Curiosità Tegallalang</button>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Cene d'Atmosfera a Bali</h3>
+                    <span class="badge badge-purple">In evidenza</span>
+                </div>
+                <p id="meal-tamandedari">• <strong>Taman Dedari (7 Aug):</strong> Cenare all'aperto circondati dalle imponenti sculture di angeli illuminate alte 10 metri.</p>
+                <button class="info-modal-btn" onclick="openDetailModal('meal-tamandedari')"><i class="fa-solid fa-circle-info"></i> Info & Curiosità Taman Dedari</button>
+                <p id="meal-babiguling" style="margin-top:12px;">• <strong>Babi Guling a Gianyar (8 Aug):</strong> Il famoso maialino da latte allo spiedo fortified espeziato nei tipici warung locali.</p>
+                <button class="info-modal-btn" onclick="openDetailModal('meal-babiguling')"><i class="fa-solid fa-circle-info"></i> Info & Curiosità Babi Guling</button>
+            </div>
+        </section>
+
+
+        <!-- TAB REGOLE DI COMPORTAMENTO & GALATEO -->
+        <section id="tab-regole" class="tab-content">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fa-solid fa-hand-holding-hand"></i> Regole di Comportamento & Galateo in Indonesia</h2>
+            </div>
+
+            <div class="card" style="border-left: 5px solid #059669;">
+                <div class="card-header">
+                    <h3 class="card-title"><i class="fa-solid fa-hands-praying" style="color:var(--primary);"></i> 1. Rispetto nei Templi e Luoghi Sacri</h3>
+                    <span class="badge badge-green">Cultura & Religione</span>
+                </div>
+                <ul style="padding-left: 18px; font-size: 0.9rem; color: var(--text-main); line-height: 1.7;">
+                    <li><strong>Abbigliamento Appropriato:</strong> Nei templi (sia induisti a Bali che buddisti/musulmani a Giava) occorre sempre coprire le spalle e le ginocchia. Indossare il <em>Sarong</em> (foulard/pareo legato in vita) quando richiesto.</li>
+                    <li><strong>Calzature:</strong> Togliere le scarpe prima di entrare nei santuari, nelle abitazioni private o nelle aree di preghiera (a Borobudur si indossano solo le ciabatte tradizionali *Upanat*).</li>
+                    <li><strong>Offerte Sacre Balinesi (Canang Sari):</strong> A Bali vedrete piccolissimi cestini di foglie di banano con fiori e incenso sui marciapiedi e sui gradini. <strong>Attenzione a non calpestarli mai!</strong></li>
+                    <li><strong>Mestruazioni:</strong> Per motivi di purità rituale della tradizione induista balinese, l'ingresso ai templi è formalmente sconsigliato alle donne durante i giorni del ciclo.</li>
+                </ul>
+            </div>
+
+            <div class="card" style="border-left: 5px solid #f59e0b;">
+                <div class="card-header">
+                    <h3 class="card-title"><i class="fa-solid fa-hand" style="color:#d97706;"></i> 2. Linguaggio del Corpo & Gesti Da Evitare</h3>
+                    <span class="badge badge-amber">Galateo Sociale</span>
+                </div>
+                <ul style="padding-left: 18px; font-size: 0.9rem; color: var(--text-main); line-height: 1.7;">
+                    <li><strong>Uso della Mano Sinistra:</strong> La mano sinistra è considerata impura nella cultura indonesiana. Utilizzare <strong>sempre la mano destra</strong> per salutare, passare oggetti, pagare o mangiare.</li>
+                    <li><strong>Non toccare mai la testa:</strong> La testa è considerata la parte più sacra del corpo, dimora dell'anima. Non toccare la testa di nessuno, neanche dei bambini.</li>
+                    <li><strong>Puntare con i piedi o con l'indice:</strong> Evitare di puntare i piedi verso persone o statue sacre mentre si è seduti. Per indicare qualcosa o qualcuno in modo cortese, usate il pollice della mano destra piegando le altre dita, oppure l'intera mano aperta.</li>
+                    <li><strong>Effusioni in Pubblico:</strong> Baci appassionati o effusioni intime in pubblico sono visti con molta riprovazione, specialmente nelle aree rurali e tradizionali di Giava.</li>
+                </ul>
+            </div>
+
+            <div class="card" style="border-left: 5px solid #0284c7;">
+                <div class="card-header">
+                    <h3 class="card-title"><i class="fa-solid fa-shield-halved" style="color:#0284c7;"></i> 3. Norme di Sicurezza, Salute & Ambiente</h3>
+                    <span class="badge badge-blue">Sicurezza & Ambiente</span>
+                </div>
+                <ul style="padding-left: 18px; font-size: 0.9rem; color: var(--text-main); line-height: 1.7;">
+                    <li><strong>Acqua del Rubinetto:</strong> <strong>NON bere mai l'acqua del rubinetto!</strong> Usare esclusivamente acqua in bottiglia sigillata anche per lavarsi i denti. Evitare il ghiaccio se non in locali/ristoranti turistici certificati.</li>
+                    <li><strong>Tolleranza ZER0 per la Droga:</strong> L'Indonesia applica sanzioni severissime contro il possesso o il consumo di sostanze stupefacenti, fino all'ergastolo o alla <strong>pena di morte</strong>.</li>
+                    <li><strong>Interazione con gli Animali:</strong> Nella Monkey Forest (Sangeh/Ubud) e nel Parco di Komodo: non guardare le scimmie negli occhi (gesto dominante), non toccarle e seguire sempre le indicazioni dei ranger con i Draghi di Komodo.</li>
+                    <li><strong>Tutela dei Coralli:</strong> Durante lo snorkeling a Manta Point e Pink Beach, non toccare, calpestare o collezionare coralli e conchiglie. Usare crema solare *Reef-Friendly*.</li>
+                </ul>
+            </div>
+        </section>
+
+
+        <!-- TAB MAPPA INTERATTIVA -->
+        <section id="tab-mappa" class="tab-content">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fa-solid fa-earth-asia"></i> Mappa Interattiva delle Tappe</h2>
+            </div>
+
+            <div class="card" style="padding: 14px;">
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">
+                    <i class="fa-solid fa-circle-info" style="color:var(--primary);"></i> Clicca o tocca sui marker e sulle linee del percorso per esplorare le tappe, gli hotel e le escursioni principali in Indonesia.
+                </p>
+                <div id="map" style="width: 100%; height: 420px; border-radius: var(--radius-md); border: 1px solid var(--border-color); z-index: 1;"></div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title" style="margin-bottom: 12px;"><i class="fa-solid fa-location-dot" style="color:var(--primary);"></i> Legenda Tappe Principali</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; font-size: 0.85rem;">
+                    <div><strong style="color: #ef4444;">📍 1. Giacarta (CGK):</strong> Aeroporto di arrivo e partenza.</div>
+                    <div><strong style="color: #f59e0b;">📍 2. Yogyakarta:</strong> Templi Borobudur & Prambanan.</div>
+                    <div><strong style="color: #8b5cf6;">📍 3. Monte Bromo:</strong> Alba sul vulcano attivo.</div>
+                    <div><strong style="color: #10b981;">📍 4. Ubud (Bali):</strong> Risaie, cascate e Monkey Forest.</div>
+                    <div><strong style="color: #06b6d4;">📍 5. Komodo & Padar:</strong> Crociera in Phinisi e Draghi.</div>
+                </div>
+            </div>
+        </section>
+
+
+                <!-- TAB: GRAFICO ESPERIENZA -->
+        <section id="tab-grafico" class="tab-content">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fa-solid fa-chart-line"></i> Metrics</h2>
+            </div>
+
+            <div class="card" style="padding: 16px;">
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">
+                    <i class="fa-solid fa-circle-info" style="color:var(--primary);"></i> Questo grafico mostra l'andamento giornaliero di <strong>Fatica</strong>, <strong>Relax</strong> e <strong>Avventura</strong> stimati per ciascuna tappa del viaggio (scala da 1 a 10).
+                </p>
+                <div style="position: relative; height: 380px; width: 100%;">
+                    <canvas id="experienceChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title" style="margin-bottom: 12px;"><i class="fa-solid fa-list-check" style="color:var(--primary);"></i> Legenda & Punti Salienti</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; font-size: 0.85rem; line-height: 1.5;">
+                    <div style="background:#fef2f2; border:1px solid #fca5a5; padding:10px; border-radius:10px;">
+                        <strong style="color:#dc2626;"><i class="fa-solid fa-fire"></i> Picchi di Fatica & Avventura:</strong><br>
+                        • <strong>6 Aug (Bromo & Traghetto):</strong> Sveglia h02:00, trekking vulcano, viaggio via terra/mare fino a Ubud (arrivo h22:00).<br>
+                        • <strong>10-11 Aug (Komodo):</strong> Trekking Padar, draghi & Mante.
+                    </div>
+                    <div style="background:#f0fdf4; border:1px solid #bbf7d0; padding:10px; border-radius:10px;">
+                        <strong style="color:#166534;"><i class="fa-solid fa-spa"></i> Picchi di Relax:</strong><br>
+                        • <strong>12-13 Aug (Ubud):</strong> Spa nelle grotte a Tjampuhan, passeggiate e relax.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <!-- TAB: DIARIO DI BORDO & NOTE -->
+        <section id="tab-diario" class="tab-content">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fa-solid fa-book-journal-whills"></i> Diario di Bordo & Note di Vacanza</h2>
+            </div>
+
+            <div class="card" style="border-left: 5px solid var(--accent);">
+                <div class="card-header">
+                    <h3 class="card-title"><i class="fa-solid fa-pen-to-square" style="color:var(--accent);"></i> Aneddoti & Eventi del Viaggio</h3>
+                    <span class="badge badge-amber">Memorabile</span>
+                </div>
+                <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:14px;">
+                    Un registro live degli imprevisti, risate, piccoli infortuni e momenti indimenticabili accaduti durante la vacanza.
+                </p>
+
+                <div style="display:flex; flex-direction:column; gap:12px;">
+                    <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius-md); padding:14px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                            <strong style="color:#b45309; font-size:0.92rem;"><i class="fa-solid fa-mug-hot"></i> Degustazione Kopi Luwak ("Caccaffè")</strong>
+                            <span class="badge badge-amber" style="font-size:0.68rem;">Giava / Bali</span>
+                        </div>
+                        <p style="font-size:0.88rem; color:#78350f; line-height:1.5;">
+                            Assaggiato il famoso "caccaffè" (Kopi Luwak), la pregiata varietà di caffè prodotta con i chicchi digeriti ed espulsi dal Luwak (zibetto delle palme). ☕🦡
+                        </p>
+                    </div>
+
+                    <div style="background:#fef2f2; border:1px solid #fca5a5; border-radius:var(--radius-md); padding:14px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                            <strong style="color:#991b1b; font-size:0.92rem;"><i class="fa-solid fa-plane-circle-exclamation"></i> Volo Citilink Anticipato</strong>
+                            <span class="badge badge-red" style="font-size:0.68rem;">Imprevisto Voli</span>
+                        </div>
+                        <p style="font-size:0.88rem; color:#7f1d1d; line-height:1.5;">
+                            La compagnia aerea Citilink ha anticipato l'orario del volo e purtroppo non possiamo più prenderlo. Risoluzione e riorganizzazione dell'itinerario in corso! ✈️⚠️
+                        </p>
+                    </div>
+
+                    <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius-md); padding:14px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                            <strong style="color:#b45309; font-size:0.92rem;"><i class="fa-solid fa-bandage"></i> Piccolo Infortunio di Valeria</strong>
+                            <span class="badge badge-red" style="font-size:0.68rem;">Giava</span>
+                        </div>
+                        <p style="font-size:0.88rem; color:#78350f; line-height:1.5;">
+                            Valeria è inciampata e si è fatta male all'unghia dell'alluce. Applicato disinfettante e cerotto d'emergenza dalla farmacia di viaggio! 🩹🦶
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 8: RIEPILOGO SPESE -->
+        <section id="tab-spese" class="tab-content">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fa-solid fa-wallet"></i> Riepilogo Costi e Pagamenti</h2>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Totale Stimato a Persona</h3>
+                    <span class="badge badge-purple" style="font-size:0.85rem; padding:6px 12px;">~ €2.571,57</span>
+                </div>
+                <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:14px;">Comprende voli internazionali, tutti i voli interni, assicurazione sanitaria, hotel, treno, crociera Komodo e ingressi templi.</p>
+
+                <div style="font-size:0.88rem; line-height:2;">
+                    <div style="display:flex; justify-content:space-between; border-bottom:1px solid #f1f5f9; padding:6px 0;">
+                        <span style="color:var(--text-muted);">Voli Intercontinentali Qatar</span>
+                        <strong style="color:var(--text-main);">€1.300,00</strong>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; border-bottom:1px solid #f1f5f9; padding:6px 0;">
+                        <span style="color:var(--text-muted);">Voli Interni totali (4 tratte)</span>
+                        <strong style="color:var(--text-main);">€331,35</strong>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; border-bottom:1px solid #f1f5f9; padding:6px 0;">
+                        <span style="color:var(--text-muted);">Assicurazione Sanitaria (Anto+Ele)</span>
+                        <strong style="color:var(--text-main);">€87,00/p</strong>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; border-bottom:1px solid #f1f5f9; padding:6px 0;">
+                        <span style="color:var(--text-muted);">Hotel & Alloggi totali</span>
+                        <strong style="color:var(--text-main);">€416,50</strong>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; border-bottom:1px solid #f1f5f9; padding:6px 0;">
+                        <span style="color:var(--text-muted);">Crociera Phinisi Komodo</span>
+                        <strong style="color:var(--text-main);">€218,55</strong>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; border-bottom:1px solid #f1f5f9; padding:6px 0;">
+                        <span style="color:var(--text-muted);">Treno & Navette</span>
+                        <strong style="color:var(--text-main);">€33,20</strong>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; padding:6px 0;">
+                        <span style="color:var(--text-muted);">Ingressi Templi & Spettacoli</span>
+                        <strong style="color:var(--text-main);">€184,97</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB VALIGIA: PACKING LIST & DOCUMENTI -->
         <section id="tab-preparativi" class="tab-content">
             <div class="section-header">
                 <h2 class="section-title"><i class="fa-solid fa-suitcase-rolling"></i> Valigia</h2>
@@ -2522,347 +2865,6 @@
                         Laccio per appendere la testa in aereo & Cuscino da viaggio
                     </div>
                 </label>
-            </div>
-        </section>
-
-<!-- TAB 6: PASTI E RISTORANTI -->
-        <section id="tab-pasti" class="tab-content">
-            <div class="section-header">
-                <h2 class="section-title"><i class="fa-solid fa-utensils"></i> Guida ai Pasti, Piatti Tipici & Ristoranti</h2>
-            </div>
-
-            <!-- PIATTI TIPICI PER LUOGO -->
-            <div style="margin-bottom: 24px;">
-                <h3 style="font-size: 1.1rem; font-weight: 800; color: #064e3b; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
-                    <i class="fa-solid fa-bowl-food" style="color:var(--primary);"></i> Piatti Tipici Categorizzati per Luogo
-                </h3>
-
-                <!-- GIAVA & YOGYAKARTA -->
-                <div class="card" style="margin-bottom: 16px;">
-                    <div class="card-header">
-                        <h4 class="card-title"><i class="fa-solid fa-location-dot" style="color:var(--primary);"></i> Giava (Yogyakarta & Giava Orientale)</h4>
-                        <span class="badge badge-amber">Cucina Giavanese</span>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 10px;">
-                        <!-- Gudeg -->
-                        <div style="background: #fafafa; border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column;">
-                            <img onerror="this.onerror=null; this.src='https://picsum.photos/600/300';" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80" alt="Gudeg Yogyakarta" style="width: 100%; height: 140px; object-fit: cover;">
-                            <div style="padding: 12px; flex: 1;">
-                                <strong style="color: var(--text-main); font-size: 0.95rem;">Gudeg (Yogyakarta)</strong>
-                                <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Piatto iconico di Jogja a base di giaca giovane (jackfruit) cotta lentamente nel latte di cocco con zucchero di palma ed erbe speziate. Servito con riso, uovo sodo e pollo.</p>
-                            </div>
-                        </div>
-
-                        <!-- Bakpia -->
-                        <div style="background: #fafafa; border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column;">
-                            <img onerror="this.onerror=null; this.src='https://picsum.photos/600/300';" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Bakpia Pathok" style="width: 100%; height: 140px; object-fit: cover;">
-                            <div style="padding: 12px; flex: 1;">
-                                <strong style="color: var(--text-main); font-size: 0.95rem;">Bakpia Pathok (Yogyakarta)</strong>
-                                <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Famoso dolcetto sfogliato cotto al forno, tradizionalmente ripieno di pasta dolce di fagioli mungo, cioccolato o formaggio. Il souvenir gastronomico n.1 di Jogja!</p>
-                            </div>
-                        </div>
-
-                        <!-- Rawon -->
-                        <div style="background: #fafafa; border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column;">
-                            <img onerror="this.onerror=null; this.src='https://picsum.photos/600/300';" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=80" alt="Rawon East Java" style="width: 100%; height: 140px; object-fit: cover;">
-                            <div style="padding: 12px; flex: 1;">
-                                <strong style="color: var(--text-main); font-size: 0.95rem;">Rawon (Giava Orientale)</strong>
-                                <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Zuppa di manzo ricca e speziata dal caratteristico colore nero intenso, dato dalle noci nere tradizionali *Kluwek*. Sapore profondo ed avvolgente.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- BALI -->
-                <div class="card" style="margin-bottom: 16px;">
-                    <div class="card-header">
-                        <h4 class="card-title"><i class="fa-solid fa-location-dot" style="color:var(--primary);"></i> Isola di Bali</h4>
-                        <span class="badge badge-green">Cucina Balinese</span>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 10px;">
-                        <!-- Babi Guling -->
-                        <div style="background: #fafafa; border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column;">
-                            <img onerror="this.onerror=null; this.src='https://picsum.photos/600/300';" src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Babi Guling Bali" style="width: 100%; height: 140px; object-fit: cover;">
-                            <div style="padding: 12px; flex: 1;">
-                                <strong style="color: var(--text-main); font-size: 0.95rem;">Babi Guling (Bali)</strong>
-                                <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Maialino da latte intero speziato e cotto lentamente allo spiedo su fuoco a legna. Pelle croccante, carne tenera e ricca di aroma di curcuma e lemongrass.</p>
-                            </div>
-                        </div>
-
-                        <!-- Ayam Betutu -->
-                        <div style="background: #fafafa; border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column;">
-                            <img onerror="this.onerror=null; this.src='https://picsum.photos/600/300';" src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=600&q=80" alt="Ayam Betutu Bali" style="width: 100%; height: 140px; object-fit: cover;">
-                            <div style="padding: 12px; flex: 1;">
-                                <strong style="color: var(--text-main); font-size: 0.95rem;">Ayam / Bebek Betutu (Bali)</strong>
-                                <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Pollo o anatra avvolta in foglie di banano e cotta al vapore/forno per ore con una miscela complessa di spezie balinesi (*Bumbu Bali*). Molto saporito e piccante.</p>
-                            </div>
-                        </div>
-
-                        <!-- Sate Lilit -->
-                        <div style="background: #fafafa; border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column;">
-                            <img onerror="this.onerror=null; this.src='https://picsum.photos/600/300';" src="https://images.unsplash.com/photo-1529543544282-ea669407fda3?auto=format&fit=crop&w=600&q=80" alt="Sate Lilit Bali" style="width: 100%; height: 140px; object-fit: cover;">
-                            <div style="padding: 12px; flex: 1;">
-                                <strong style="color: var(--text-main); font-size: 0.95rem;">Sate Lilit (Bali)</strong>
-                                <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Spiedini tipici balinesi a base di carne tritata (maiale, pollo o pesce) arrotolata attorno a bastoncini di lemongrass (cannella o bambù) e grigliata sui carboni.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- KOMODO & FLORES -->
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title"><i class="fa-solid fa-location-dot" style="color:var(--primary);"></i> Flores & Labuan Bajo (Komodo)</h4>
-                        <span class="badge badge-purple">Pesce Fresco & Mare</span>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 10px;">
-                        <!-- Ikan Bakar -->
-                        <div style="background: #fafafa; border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column;">
-                            <img onerror="this.onerror=null; this.src='https://picsum.photos/600/300';" src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80" alt="Ikan Bakar Labuan Bajo" style="width: 100%; height: 140px; object-fit: cover;">
-                            <div style="padding: 12px; flex: 1;">
-                                <strong style="color: var(--text-main); font-size: 0.95rem;">Ikan Bakar & Sambal Matah (Labuan Bajo)</strong>
-                                <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Pesce fresco pescato in giornata grigliato sui carboni al night market di Labuan Bajo, servito con la squisita salsa cruda *Sambal Matah* (scallogno, peperoncino, lime e olio caldo).</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- RISTORANTI CONSIGLIATI -->
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Consigli Ristoranti a Yogyakarta</h3>
-                    <span class="badge badge-green">Giava</span>
-                </div>
-                <p>• <strong>Kesuma Restaurant:</strong> Cucina tipica locale, stile familiare e accogliente.</p>
-                <p>• <strong>Loko Cafe Malioboro:</strong> Vicinissimo alla stazione dei treni.</p>
-                <p>• <strong>The House of Raminten:</strong> Iconico locale di cucina tipica giavanese.</p>
-                <p>• <strong>Mediterranea:</strong> Cucina francese e mediterranea.</p>
-            </div>
-
-            <div class="card" id="meal-tegallalang">
-                <div class="card-header">
-                    <h3 class="card-title">Pranzo sulle Risaie di Tegallalang (7 Agosto)</h3>
-                    <span class="badge badge-amber">Ubud</span>
-                </div>
-                <p>• <strong>Tis Cafe:</strong> Edificio in bambù a più livelli con piscina a sfioro e vista sulle risaie.</p>
-                <p>• <strong>Tebasari Resto:</strong> Gazebo privati in bambù galleggianti su laghetti con pesci.</p>
-                <p>• <strong>Uma Ceking Resto:</strong> Informale con cucina tipica (Nasi Goreng / Mie Goreng).</p>
-                <button class="info-modal-btn" onclick="openDetailModal('meal-tegallalang')"><i class="fa-solid fa-circle-info"></i> Info & Curiosità Tegallalang</button>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Cene d'Atmosfera a Bali</h3>
-                    <span class="badge badge-purple">In evidenza</span>
-                </div>
-                <p id="meal-tamandedari">• <strong>Taman Dedari (7 Aug):</strong> Cenare all'aperto circondati dalle imponenti sculture di angeli illuminate alte 10 metri.</p>
-                <button class="info-modal-btn" onclick="openDetailModal('meal-tamandedari')"><i class="fa-solid fa-circle-info"></i> Info & Curiosità Taman Dedari</button>
-                <p id="meal-babiguling" style="margin-top:12px;">• <strong>Babi Guling a Gianyar (8 Aug):</strong> Il famoso maialino da latte allo spiedo fortified espeziato nei tipici warung locali.</p>
-                <button class="info-modal-btn" onclick="openDetailModal('meal-babiguling')"><i class="fa-solid fa-circle-info"></i> Info & Curiosità Babi Guling</button>
-            </div>
-        </section>
-
-
-        <!-- TAB REGOLE DI COMPORTAMENTO & GALATEO -->
-        <section id="tab-regole" class="tab-content">
-            <div class="section-header">
-                <h2 class="section-title"><i class="fa-solid fa-hand-holding-hand"></i> Regole di Comportamento & Galateo in Indonesia</h2>
-            </div>
-
-            <div class="card" style="border-left: 5px solid #059669;">
-                <div class="card-header">
-                    <h3 class="card-title"><i class="fa-solid fa-hands-praying" style="color:var(--primary);"></i> 1. Rispetto nei Templi e Luoghi Sacri</h3>
-                    <span class="badge badge-green">Cultura & Religione</span>
-                </div>
-                <ul style="padding-left: 18px; font-size: 0.9rem; color: var(--text-main); line-height: 1.7;">
-                    <li><strong>Abbigliamento Appropriato:</strong> Nei templi (sia induisti a Bali che buddisti/musulmani a Giava) occorre sempre coprire le spalle e le ginocchia. Indossare il <em>Sarong</em> (foulard/pareo legato in vita) quando richiesto.</li>
-                    <li><strong>Calzature:</strong> Togliere le scarpe prima di entrare nei santuari, nelle abitazioni private o nelle aree di preghiera (a Borobudur si indossano solo le ciabatte tradizionali *Upanat*).</li>
-                    <li><strong>Offerte Sacre Balinesi (Canang Sari):</strong> A Bali vedrete piccolissimi cestini di foglie di banano con fiori e incenso sui marciapiedi e sui gradini. <strong>Attenzione a non calpestarli mai!</strong></li>
-                    <li><strong>Mestruazioni:</strong> Per motivi di purità rituale della tradizione induista balinese, l'ingresso ai templi è formalmente sconsigliato alle donne durante i giorni del ciclo.</li>
-                </ul>
-            </div>
-
-            <div class="card" style="border-left: 5px solid #f59e0b;">
-                <div class="card-header">
-                    <h3 class="card-title"><i class="fa-solid fa-hand" style="color:#d97706;"></i> 2. Linguaggio del Corpo & Gesti Da Evitare</h3>
-                    <span class="badge badge-amber">Galateo Sociale</span>
-                </div>
-                <ul style="padding-left: 18px; font-size: 0.9rem; color: var(--text-main); line-height: 1.7;">
-                    <li><strong>Uso della Mano Sinistra:</strong> La mano sinistra è considerata impura nella cultura indonesiana. Utilizzare <strong>sempre la mano destra</strong> per salutare, passare oggetti, pagare o mangiare.</li>
-                    <li><strong>Non toccare mai la testa:</strong> La testa è considerata la parte più sacra del corpo, dimora dell'anima. Non toccare la testa di nessuno, neanche dei bambini.</li>
-                    <li><strong>Puntare con i piedi o con l'indice:</strong> Evitare di puntare i piedi verso persone o statue sacre mentre si è seduti. Per indicare qualcosa o qualcuno in modo cortese, usate il pollice della mano destra piegando le altre dita, oppure l'intera mano aperta.</li>
-                    <li><strong>Effusioni in Pubblico:</strong> Baci appassionati o effusioni intime in pubblico sono visti con molta riprovazione, specialmente nelle aree rurali e tradizionali di Giava.</li>
-                </ul>
-            </div>
-
-            <div class="card" style="border-left: 5px solid #0284c7;">
-                <div class="card-header">
-                    <h3 class="card-title"><i class="fa-solid fa-shield-halved" style="color:#0284c7;"></i> 3. Norme di Sicurezza, Salute & Ambiente</h3>
-                    <span class="badge badge-blue">Sicurezza & Ambiente</span>
-                </div>
-                <ul style="padding-left: 18px; font-size: 0.9rem; color: var(--text-main); line-height: 1.7;">
-                    <li><strong>Acqua del Rubinetto:</strong> <strong>NON bere mai l'acqua del rubinetto!</strong> Usare esclusivamente acqua in bottiglia sigillata anche per lavarsi i denti. Evitare il ghiaccio se non in locali/ristoranti turistici certificati.</li>
-                    <li><strong>Tolleranza ZER0 per la Droga:</strong> L'Indonesia applica sanzioni severissime contro il possesso o il consumo di sostanze stupefacenti, fino all'ergastolo o alla <strong>pena di morte</strong>.</li>
-                    <li><strong>Interazione con gli Animali:</strong> Nella Monkey Forest (Sangeh/Ubud) e nel Parco di Komodo: non guardare le scimmie negli occhi (gesto dominante), non toccarle e seguire sempre le indicazioni dei ranger con i Draghi di Komodo.</li>
-                    <li><strong>Tutela dei Coralli:</strong> Durante lo snorkeling a Manta Point e Pink Beach, non toccare, calpestare o collezionare coralli e conchiglie. Usare crema solare *Reef-Friendly*.</li>
-                </ul>
-            </div>
-        </section>
-
-
-        <!-- TAB MAPPA INTERATTIVA -->
-        <section id="tab-mappa" class="tab-content">
-            <div class="section-header">
-                <h2 class="section-title"><i class="fa-solid fa-earth-asia"></i> Mappa Interattiva delle Tappe</h2>
-            </div>
-
-            <div class="card" style="padding: 14px;">
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">
-                    <i class="fa-solid fa-circle-info" style="color:var(--primary);"></i> Clicca o tocca sui marker e sulle linee del percorso per esplorare le tappe, gli hotel e le escursioni principali in Indonesia.
-                </p>
-                <div id="map" style="width: 100%; height: 420px; border-radius: var(--radius-md); border: 1px solid var(--border-color); z-index: 1;"></div>
-            </div>
-
-            <div class="card">
-                <h3 class="card-title" style="margin-bottom: 12px;"><i class="fa-solid fa-location-dot" style="color:var(--primary);"></i> Legenda Tappe Principali</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; font-size: 0.85rem;">
-                    <div><strong style="color: #ef4444;">📍 1. Giacarta (CGK):</strong> Aeroporto di arrivo e partenza.</div>
-                    <div><strong style="color: #f59e0b;">📍 2. Yogyakarta:</strong> Templi Borobudur & Prambanan.</div>
-                    <div><strong style="color: #8b5cf6;">📍 3. Monte Bromo:</strong> Alba sul vulcano attivo.</div>
-                    <div><strong style="color: #10b981;">📍 4. Ubud (Bali):</strong> Risaie, cascate e Monkey Forest.</div>
-                    <div><strong style="color: #06b6d4;">📍 5. Komodo & Padar:</strong> Crociera in Phinisi e Draghi.</div>
-                </div>
-            </div>
-        </section>
-
-
-                <!-- TAB: GRAFICO ESPERIENZA -->
-        <section id="tab-grafico" class="tab-content">
-            <div class="section-header">
-                <h2 class="section-title"><i class="fa-solid fa-chart-line"></i> Analisi Esperienza per Giorno</h2>
-            </div>
-
-            <div class="card" style="padding: 16px;">
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">
-                    <i class="fa-solid fa-circle-info" style="color:var(--primary);"></i> Questo grafico mostra l'andamento giornaliero di <strong>Fatica</strong>, <strong>Relax</strong> e <strong>Avventura</strong> stimati per ciascuna tappa del viaggio (scala da 1 a 10).
-                </p>
-                <div style="position: relative; height: 380px; width: 100%;">
-                    <canvas id="experienceChart"></canvas>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3 class="card-title" style="margin-bottom: 12px;"><i class="fa-solid fa-list-check" style="color:var(--primary);"></i> Legenda & Punti Salienti</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; font-size: 0.85rem; line-height: 1.5;">
-                    <div style="background:#fef2f2; border:1px solid #fca5a5; padding:10px; border-radius:10px;">
-                        <strong style="color:#dc2626;"><i class="fa-solid fa-fire"></i> Picchi di Fatica & Avventura:</strong><br>
-                        • <strong>6 Aug (Bromo & Traghetto):</strong> Sveglia h02:00, trekking vulcano, viaggio via terra/mare fino a Ubud (arrivo h22:00).<br>
-                        • <strong>10-11 Aug (Komodo):</strong> Trekking Padar, draghi & Mante.
-                    </div>
-                    <div style="background:#f0fdf4; border:1px solid #bbf7d0; padding:10px; border-radius:10px;">
-                        <strong style="color:#166534;"><i class="fa-solid fa-spa"></i> Picchi di Relax:</strong><br>
-                        • <strong>12-13 Aug (Ubud):</strong> Spa nelle grotte a Tjampuhan, passeggiate e relax.
-                    </div>
-                </div>
-            </div>
-        </section>
-
-                <!-- TAB: DIARIO DI BORDO & NOTE -->
-        <section id="tab-diario" class="tab-content">
-            <div class="section-header">
-                <h2 class="section-title"><i class="fa-solid fa-book-journal-whills"></i> Diario di Bordo & Note di Vacanza</h2>
-            </div>
-
-            <div class="card" style="border-left: 5px solid var(--accent);">
-                <div class="card-header">
-                    <h3 class="card-title"><i class="fa-solid fa-pen-to-square" style="color:var(--accent);"></i> Aneddoti & Eventi del Viaggio</h3>
-                    <span class="badge badge-amber">Memorabile</span>
-                </div>
-                <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:14px;">
-                    Un registro live degli imprevisti, risate, piccoli infortuni e momenti indimenticabili accaduti durante la vacanza.
-                </p>
-
-                <div style="display:flex; flex-direction:column; gap:12px;">
-                    <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#b45309; font-size:0.92rem;"><i class="fa-solid fa-mug-hot"></i> Degustazione Kopi Luwak ("Caccaffè")</strong>
-                            <span class="badge badge-amber" style="font-size:0.68rem;">Giava / Bali</span>
-                        </div>
-                        <p style="font-size:0.88rem; color:#78350f; line-height:1.5;">
-                            Assaggiato il famoso "caccaffè" (Kopi Luwak), la pregiata varietà di caffè prodotta con i chicchi digeriti ed espulsi dal Luwak (zibetto delle palme). ☕🦡
-                        </p>
-                    </div>
-
-                    <div style="background:#fef2f2; border:1px solid #fca5a5; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#991b1b; font-size:0.92rem;"><i class="fa-solid fa-plane-circle-exclamation"></i> Volo Citilink Anticipato</strong>
-                            <span class="badge badge-red" style="font-size:0.68rem;">Imprevisto Voli</span>
-                        </div>
-                        <p style="font-size:0.88rem; color:#7f1d1d; line-height:1.5;">
-                            La compagnia aerea Citilink ha anticipato l'orario del volo e purtroppo non possiamo più prenderlo. Risoluzione e riorganizzazione dell'itinerario in corso! ✈️⚠️
-                        </p>
-                    </div>
-
-                    <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#b45309; font-size:0.92rem;"><i class="fa-solid fa-bandage"></i> Piccolo Infortunio di Valeria</strong>
-                            <span class="badge badge-red" style="font-size:0.68rem;">Giava</span>
-                        </div>
-                        <p style="font-size:0.88rem; color:#78350f; line-height:1.5;">
-                            Valeria è inciampata e si è fatta male all'unghia dell'alluce. Applicato disinfettante e cerotto d'emergenza dalla farmacia di viaggio! 🩹🦶
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TAB 8: RIEPILOGO SPESE -->
-        <section id="tab-spese" class="tab-content">
-            <div class="section-header">
-                <h2 class="section-title"><i class="fa-solid fa-wallet"></i> Riepilogo Costi e Pagamenti</h2>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Totale Stimato a Persona</h3>
-                    <span class="badge badge-purple" style="font-size:0.85rem; padding:6px 12px;">~ €2.571,57</span>
-                </div>
-                <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:14px;">Comprende voli internazionali, tutti i voli interni, assicurazione sanitaria, hotel, treno, crociera Komodo e ingressi templi.</p>
-
-                <div style="font-size:0.88rem; line-height:2;">
-                    <div style="display:flex; justify-content:space-between; border-bottom:1px solid #f1f5f9; padding:6px 0;">
-                        <span style="color:var(--text-muted);">Voli Intercontinentali Qatar</span>
-                        <strong style="color:var(--text-main);">€1.300,00</strong>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; border-bottom:1px solid #f1f5f9; padding:6px 0;">
-                        <span style="color:var(--text-muted);">Voli Interni totali (4 tratte)</span>
-                        <strong style="color:var(--text-main);">€331,35</strong>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; border-bottom:1px solid #f1f5f9; padding:6px 0;">
-                        <span style="color:var(--text-muted);">Assicurazione Sanitaria (Anto+Ele)</span>
-                        <strong style="color:var(--text-main);">€87,00/p</strong>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; border-bottom:1px solid #f1f5f9; padding:6px 0;">
-                        <span style="color:var(--text-muted);">Hotel & Alloggi totali</span>
-                        <strong style="color:var(--text-main);">€416,50</strong>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; border-bottom:1px solid #f1f5f9; padding:6px 0;">
-                        <span style="color:var(--text-muted);">Crociera Phinisi Komodo</span>
-                        <strong style="color:var(--text-main);">€218,55</strong>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; border-bottom:1px solid #f1f5f9; padding:6px 0;">
-                        <span style="color:var(--text-muted);">Treno & Navette</span>
-                        <strong style="color:var(--text-main);">€33,20</strong>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; padding:6px 0;">
-                        <span style="color:var(--text-muted);">Ingressi Templi & Spettacoli</span>
-                        <strong style="color:var(--text-main);">€184,97</strong>
-                    </div>
-                </div>
             </div>
         </section>
 
