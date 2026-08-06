@@ -12,113 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Leaflet.js per Mappe Interattive -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="">
-        // Chart.js Experience Chart Logic
-        let chartInitialized = false;
-        let expChart;
-
-        function initChart() {
-            if (chartInitialized) return;
-            chartInitialized = true;
-
-            const ctx = document.getElementById('experienceChart').getContext('2d');
-            expChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: [
-                        '2 Aug (Voli)', '3 Aug (Jogja)', '4 Aug (Borobudur)', '5 Aug (Treno)',
-                        '6 Aug (Bromo/Traghetto)', '7 Aug (Ubud Nord)', '8 Aug (Cascate)', '9 Aug (Komodo Arr)',
-                        '10 Aug (Crociera 1)', '11 Aug (Padar/Draghi)', '12 Aug (Ubud Spa)', '13 Aug (Ubud Relax)',
-                        '14 Aug (Volo CGK)', '15 Aug (Arrivo FCO)'
-                    ],
-                    datasets: [
-                        {
-                            label: 'Fatica',
-                            data: [7, 6, 8, 5, 10, 6, 6, 5, 7, 9, 4, 2, 6, 7],
-                            borderColor: '#ef4444',
-                            backgroundColor: 'rgba(239, 68, 68, 0.15)',
-                            fill: true,
-                            tension: 0.35,
-                            borderWidth: 3,
-                            pointRadius: 4,
-                            pointBackgroundColor: '#ef4444'
-                        },
-                        {
-                            label: 'Relax',
-                            data: [3, 4, 3, 6, 1, 6, 6, 6, 7, 5, 9, 10, 4, 3],
-                            borderColor: '#10b981',
-                            backgroundColor: 'rgba(16, 185, 129, 0.15)',
-                            fill: true,
-                            tension: 0.35,
-                            borderWidth: 3,
-                            pointRadius: 4,
-                            pointBackgroundColor: '#10b981'
-                        },
-                        {
-                            label: 'Avventura',
-                            data: [5, 5, 9, 6, 10, 7, 8, 7, 9, 10, 5, 4, 4, 2],
-                            borderColor: '#f59e0b',
-                            backgroundColor: 'rgba(245, 158, 11, 0.15)',
-                            fill: true,
-                            tension: 0.35,
-                            borderWidth: 3,
-                            pointRadius: 4,
-                            pointBackgroundColor: '#f59e0b'
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    interaction: {
-                        mode: 'index',
-                        intersect: false,
-                    },
-                    scales: {
-                        y: {
-                            min: 0,
-                            max: 10,
-                            ticks: {
-                                stepSize: 2
-                            },
-                            grid: {
-                                color: '#e2e8f0'
-                            },
-                            title: {
-                                display: true,
-                                text: 'Livello (1 - 10)',
-                                font: { weight: 'bold' }
-                            }
-                        },
-                        x: {
-                            grid: {
-                                display: false
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                            labels: {
-                                font: {
-                                    family: "'Plus Jakarta Sans', sans-serif",
-                                    weight: 'bold',
-                                    size: 12
-                                },
-                                usePointStyle: true,
-                                padding: 15
-                            }
-                        },
-                        tooltip: {
-                            padding: 10,
-                            cornerRadius: 8,
-                            titleFont: { weight: 'bold' }
-                        }
-                    }
-                }
-            });
-        }
-    </script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
     <style>
     :root {
@@ -1125,113 +1019,7 @@
     }
     </style>
     <!-- Chart.js per Grafico Esperienza -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js">
-        // Chart.js Experience Chart Logic
-        let chartInitialized = false;
-        let expChart;
-
-        function initChart() {
-            if (chartInitialized) return;
-            chartInitialized = true;
-
-            const ctx = document.getElementById('experienceChart').getContext('2d');
-            expChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: [
-                        '2 Aug (Voli)', '3 Aug (Jogja)', '4 Aug (Borobudur)', '5 Aug (Treno)',
-                        '6 Aug (Bromo/Traghetto)', '7 Aug (Ubud Nord)', '8 Aug (Cascate)', '9 Aug (Komodo Arr)',
-                        '10 Aug (Crociera 1)', '11 Aug (Padar/Draghi)', '12 Aug (Ubud Spa)', '13 Aug (Ubud Relax)',
-                        '14 Aug (Volo CGK)', '15 Aug (Arrivo FCO)'
-                    ],
-                    datasets: [
-                        {
-                            label: 'Fatica',
-                            data: [7, 6, 8, 5, 10, 6, 6, 5, 7, 9, 4, 2, 6, 7],
-                            borderColor: '#ef4444',
-                            backgroundColor: 'rgba(239, 68, 68, 0.15)',
-                            fill: true,
-                            tension: 0.35,
-                            borderWidth: 3,
-                            pointRadius: 4,
-                            pointBackgroundColor: '#ef4444'
-                        },
-                        {
-                            label: 'Relax',
-                            data: [3, 4, 3, 6, 1, 6, 6, 6, 7, 5, 9, 10, 4, 3],
-                            borderColor: '#10b981',
-                            backgroundColor: 'rgba(16, 185, 129, 0.15)',
-                            fill: true,
-                            tension: 0.35,
-                            borderWidth: 3,
-                            pointRadius: 4,
-                            pointBackgroundColor: '#10b981'
-                        },
-                        {
-                            label: 'Avventura',
-                            data: [5, 5, 9, 6, 10, 7, 8, 7, 9, 10, 5, 4, 4, 2],
-                            borderColor: '#f59e0b',
-                            backgroundColor: 'rgba(245, 158, 11, 0.15)',
-                            fill: true,
-                            tension: 0.35,
-                            borderWidth: 3,
-                            pointRadius: 4,
-                            pointBackgroundColor: '#f59e0b'
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    interaction: {
-                        mode: 'index',
-                        intersect: false,
-                    },
-                    scales: {
-                        y: {
-                            min: 0,
-                            max: 10,
-                            ticks: {
-                                stepSize: 2
-                            },
-                            grid: {
-                                color: '#e2e8f0'
-                            },
-                            title: {
-                                display: true,
-                                text: 'Livello (1 - 10)',
-                                font: { weight: 'bold' }
-                            }
-                        },
-                        x: {
-                            grid: {
-                                display: false
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                            labels: {
-                                font: {
-                                    family: "'Plus Jakarta Sans', sans-serif",
-                                    weight: 'bold',
-                                    size: 12
-                                },
-                                usePointStyle: true,
-                                padding: 15
-                            }
-                        },
-                        tooltip: {
-                            padding: 10,
-                            cornerRadius: 8,
-                            titleFont: { weight: 'bold' }
-                        }
-                    }
-                }
-            });
-        }
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -1314,11 +1102,11 @@
                     <i class="fa-solid fa-map-location"></i>
                     <span>Mappa</span>
                 </button>
-                                <button class="nav-btn" id="btn-tab-grafico" onclick="switchTab('grafico', this)">
+                <button class="nav-btn" id="btn-tab-grafico" onclick="switchTab('grafico', this)">
                     <i class="fa-solid fa-chart-line"></i>
                     <span>Metrics</span>
                 </button>
-                                <button class="nav-btn" id="btn-tab-diario" onclick="switchTab('diario', this)">
+                <button class="nav-btn" id="btn-tab-diario" onclick="switchTab('diario', this)">
                     <i class="fa-solid fa-book-journal-whills"></i>
                     <span>Diario & Note</span>
                 </button>
@@ -1326,7 +1114,7 @@
                     <i class="fa-solid fa-wallet"></i>
                     <span>Costi</span>
                 </button>
-                            <button class="nav-btn" id="btn-tab-preparativi" onclick="switchTab('preparativi', this)">
+                <button class="nav-btn" id="btn-tab-preparativi" onclick="switchTab('preparativi', this)">
                     <i class="fa-solid fa-suitcase-rolling"></i>
                     <span>Valigia</span>
                 </button>
@@ -1358,7 +1146,7 @@
                     <button class="day-btn" id="btn-day-11-aug" onclick="filterDay('11-aug', this)">11 Aug (Crociera Day 2)</button>
                     <button class="day-btn" id="btn-day-12-aug" onclick="filterDay('12-aug', this)">12 Aug (Komodo -> Ubud)</button>
                     <button class="day-btn" id="btn-day-13-aug" onclick="filterDay('13-aug', this)">13 Aug (Ubud Relax)</button>
-                    <button class="day-btn" id="btn-day-14-aug" onclick="filterDay('14-aug', this)">14 Aug (Rientro CGK)</button>
+                    <button class="day-btn" id="btn-day-14-aug" onclick="filterDay('14-aug', this)">14 Aug (Lempuyang & CGK)</button>
                     <button class="day-btn" id="btn-day-15-aug" onclick="filterDay('15-aug', this)">15 Aug (Arrivo FCO)</button>
                 </div>
             </div>
@@ -1560,49 +1348,43 @@
                     <div class="card-header">
                         <div>
                             <span class="badge badge-green">Venerdì 7 Agosto</span>
-                            <h3 class="card-title" style="margin-top:4px;">Ubud Nord: Scimmie Sacre, Terrazze di Riso & Sorgenti</h3>
+                            <h3 class="card-title" style="margin-top:4px;">Ubud Nord: Terrazze di Riso, Tirta Empul & Relax in Piscina</h3>
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="time-tag"><i class="fa-regular fa-clock"></i> 07:30 - 09:30</div>
-                        <div class="timeline-content">
-                            <h4 class="interactive-link" onclick="openDetailModal('act-sangeh')">
-                                Sangeh Monkey Forest (Alas Pala) <i class="fa-solid fa-lightbulb"></i>
-                            </h4>
-                            <p>Foresta sacra di noce moscata con l'antico tempio Pura Bukit Sari e macachi grigi.</p>
-                            <button class="info-modal-btn" onclick="openDetailModal('act-sangeh'); event.stopPropagation();"><i class="fa-solid fa-lightbulb"></i> Info & Curiosità Sangeh</button>
-                            <div class="outfit-box">
-                                <strong><i class="fa-solid fa-triangle-exclamation"></i> Attenzione scimmie:</strong> Togliere occhiali, gioielli, oggetti luccicanti. No cibo in mano.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="time-tag"><i class="fa-regular fa-clock"></i> 10:00 - 12:30</div>
+                        <div class="time-tag"><i class="fa-regular fa-clock"></i> 09:30</div>
                         <div class="timeline-content">
                             <h4 class="interactive-link" onclick="jumpToTarget('pasti', 'meal-tegallalang')">
-                                Risaie Terrazzate di Tegallalang & Pranzo <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                Partenza & Risaie Terrazzate di Tegallalang <i class="fa-solid fa-arrow-right-to-bracket"></i>
                             </h4>
-                            <p>Passeggiata tra le iconiche terrazze smeraldo. Pranzo panoramico (Tis Cafe / Tebasari).</p>
+                            <p>Partenza alle 09:30 per la passeggiata tra le iconiche terrazze smeraldo di Tegallalang. Pranzo da capire in zona.</p>
                             <button class="info-modal-btn" onclick="openDetailModal('meal-tegallalang'); event.stopPropagation();"><i class="fa-solid fa-lightbulb"></i> Info & Curiosità Tegallalang</button>
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="time-tag"><i class="fa-regular fa-clock"></i> 14:30 - 16:30</div>
+                        <div class="time-tag"><i class="fa-regular fa-clock"></i> Subito dopo pranzo</div>
                         <div class="timeline-content">
                             <h4 class="interactive-link" onclick="jumpToTarget('attivita', 'act-tirtaempul')">
-                                Pura Tirta Empul (Rituale Melukat) <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                Tempio Pura Tirta Empul (Rituale Melukat) <i class="fa-solid fa-arrow-right-to-bracket"></i>
                             </h4>
-                            <p>Sorgenti sacre induiste. Sarong verde da bagno per chi si immerge nelle vasche.</p>
+                            <p>Visita al tempio delle sorgenti sacre induiste per il rituale di purificazione Melukat. Sarong verde da bagno per chi si immerge.</p>
                             <button class="info-modal-btn" onclick="openDetailModal('act-tirtaempul'); event.stopPropagation();"><i class="fa-solid fa-lightbulb"></i> Info & Curiosità Tirta Empul</button>
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="time-tag"><i class="fa-regular fa-clock"></i> 17:30</div>
+                        <div class="time-tag"><i class="fa-regular fa-clock"></i> 15:00</div>
+                        <div class="timeline-content">
+                            <h4><i class="fa-solid fa-water" style="color:var(--primary);"></i> Rientro in Hotel & Free Time in Piscina Privata</h4>
+                            <p>Rientro in resort alle 15:00 per tempo libero e relax in piscina privata.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time-tag"><i class="fa-regular fa-clock"></i> 17:30 - 20:00</div>
                         <div class="timeline-content">
                             <h4 class="interactive-link" onclick="jumpToTarget('pasti', 'meal-tamandedari')">
-                                Cena al Taman Dedari tra le Statue degli Angeli <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                Cena al Taman Dedari & Rientro h 20:00 <i class="fa-solid fa-arrow-right-to-bracket"></i>
                             </h4>
-                            <p>Cena all'aperto tra le monumentali sculture illuminate alte 10 metri.</p>
+                            <p>Partenza alle 17:30 per la cena all'aperto al Taman Dedari tra le monumentali sculture di angeli illuminate. Rientro in hotel previsto per le ore 20:00.</p>
                             <button class="info-modal-btn" onclick="openDetailModal('meal-tamandedari'); event.stopPropagation();"><i class="fa-solid fa-lightbulb"></i> Info & Curiosità Taman Dedari</button>
                         </div>
                     </div>
@@ -1655,17 +1437,17 @@
                     <div class="card-header">
                         <div>
                             <span class="badge badge-blue">Domenica 9 Agosto</span>
-                            <h3 class="card-title" style="margin-top:4px;">Porta del Paradiso & Volo per l'Isola di Komodo</h3>
+                            <h3 class="card-title" style="margin-top:4px;">Sangeh Monkey Forest & Volo per l'Isola di Komodo</h3>
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="time-tag"><i class="fa-regular fa-clock"></i> 05:00 - 11:00</div>
+                        <div class="time-tag"><i class="fa-regular fa-clock"></i> 08:30 - 12:00</div>
                         <div class="timeline-content">
-                            <h4 class="interactive-link" onclick="openDetailModal('act-lempuyang')">
-                                Pura Lempuyang (Gates of Heaven) <i class="fa-solid fa-lightbulb"></i>
+                            <h4 class="interactive-link" onclick="jumpToTarget('attivita', 'act-sangeh')">
+                                Sangeh Monkey Forest (Alas Pala) <i class="fa-solid fa-arrow-right-to-bracket"></i>
                             </h4>
-                            <p>Partenza all'alba per scattare la celebre foto incorniciata dal Monte Agung.</p>
-                            <button class="info-modal-btn" onclick="openDetailModal('act-lempuyang'); event.stopPropagation();"><i class="fa-solid fa-lightbulb"></i> Info & Curiosità Lempuyang</button>
+                            <p>Visita alla foresta sacra popolata da imponenti alberi di noce moscata e centinaia di macachi balinesi.</p>
+                            <button class="info-modal-btn" onclick="openDetailModal('act-sangeh'); event.stopPropagation();"><i class="fa-solid fa-lightbulb"></i> Info & Curiosità Sangeh</button>
                         </div>
                     </div>
                     <div class="timeline-item">
@@ -1835,7 +1617,24 @@
                     <div class="card-header">
                         <div>
                             <span class="badge badge-purple">Venerdì 14 Agosto</span>
-                            <h3 class="card-title" style="margin-top:4px;">Ultimo Shopping a Bali & Volo per Giacarta</h3>
+                            <h3 class="card-title" style="margin-top:4px;">Pura Lempuyang (Mattina), Shopping & Volo per Giacarta</h3>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time-tag"><i class="fa-regular fa-clock"></i> Mattina</div>
+                        <div class="timeline-content">
+                            <h4 class="interactive-link" onclick="jumpToTarget('attivita', 'act-lempuyang')">
+                                Visita a Pura Lempuyang (Gates of Heaven) <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                            </h4>
+                            <p>Visita al celebre tempio Pura Lempuyang di mattina per ammirare le famose Gates of Heaven con vista sul Monte Agung.</p>
+                            <button class="info-modal-btn" onclick="openDetailModal('act-lempuyang'); event.stopPropagation();"><i class="fa-solid fa-lightbulb"></i> Info & Curiosità Lempuyang</button>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time-tag"><i class="fa-regular fa-clock"></i> Pomeriggio</div>
+                        <div class="timeline-content">
+                            <h4>Ultimo Shopping & Relax a Bali</h4>
+                            <p>Tempo libero per acquisti, souvenir e ultimi preparativi prima della partenza.</p>
                         </div>
                     </div>
                     <div class="timeline-item">
@@ -2078,7 +1877,7 @@
             <div class="card" id="act-sangeh">
                 <div class="card-header">
                     <h3 class="card-title"><i class="fa-solid fa-tree"></i> Sangeh Monkey Forest (Alas Pala)</h3>
-                    <span class="badge badge-green">7 Agosto</span>
+                    <span class="badge badge-green">9 Agosto</span>
                 </div>
                 <p>Foresta sacra popolata da sculture antiche e centinaia di macachi tra giganteschi alberi di noce moscata.</p>
                 <button class="info-modal-btn" onclick="openDetailModal('act-sangeh')"><i class="fa-solid fa-circle-info"></i> Info & Curiosità Sangeh</button>
@@ -2105,9 +1904,9 @@
             <div class="card" id="act-lempuyang">
                 <div class="card-header">
                     <h3 class="card-title"><i class="fa-solid fa-torii-gate"></i> Pura Lempuyang (Gates of Heaven)</h3>
-                    <span class="badge badge-amber">9 Agosto</span>
+                    <span class="badge badge-purple">14 Agosto (Mattina)</span>
                 </div>
-                <p>Uno dei templi più sacri di Bali con l'iconica porta spaccata (Candi Bentar) rivolta verso il Monte Agung.</p>
+                <p>Uno dei templi più sacri di Bali con l'iconica porta spaccata (Candi Bentar) rivolta verso il Monte Agung (in programma per la mattina del 14 agosto).</p>
                 <button class="info-modal-btn" onclick="openDetailModal('act-lempuyang')"><i class="fa-solid fa-circle-info"></i> Info & Curiosità Lempuyang</button>
             </div>
 
@@ -2122,9 +1921,7 @@
         </section>
 
 
-                
-
-<!-- TAB 6: PASTI E RISTORANTI -->
+        <!-- TAB 6: PASTI E RISTORANTI -->
         <section id="tab-pasti" class="tab-content">
             <div class="section-header">
                 <h2 class="section-title"><i class="fa-solid fa-utensils"></i> Guida ai Pasti, Piatti Tipici & Ristoranti</h2>
@@ -2332,14 +2129,14 @@
                     <div><strong style="color: #ef4444;">📍 1. Giacarta (CGK):</strong> Aeroporto di arrivo e partenza.</div>
                     <div><strong style="color: #f59e0b;">📍 2. Yogyakarta:</strong> Templi Borobudur & Prambanan.</div>
                     <div><strong style="color: #8b5cf6;">📍 3. Monte Bromo:</strong> Alba sul vulcano attivo.</div>
-                    <div><strong style="color: #10b981;">📍 4. Ubud (Bali):</strong> Risaie, cascate e Monkey Forest.</div>
+                    <div><strong style="color: #10b981;">📍 4. Ubud (Bali):</strong> Risaie, cascate e Sangeh Monkey Forest.</div>
                     <div><strong style="color: #06b6d4;">📍 5. Komodo & Padar:</strong> Crociera in Phinisi e Draghi.</div>
                 </div>
             </div>
         </section>
 
 
-                <!-- TAB: GRAFICO ESPERIENZA -->
+        <!-- TAB: GRAFICO ESPERIENZA -->
         <section id="tab-grafico" class="tab-content">
             <div class="section-header">
                 <h2 class="section-title"><i class="fa-solid fa-chart-line"></i> Metrics</h2>
@@ -2370,7 +2167,7 @@
             </div>
         </section>
 
-                <!-- TAB: DIARIO DI BORDO & NOTE -->
+        <!-- TAB: DIARIO DI BORDO & NOTE -->
         <section id="tab-diario" class="tab-content">
             <div class="section-header">
                 <h2 class="section-title"><i class="fa-solid fa-book-journal-whills"></i> Diario di Bordo & Note di Vacanza</h2>
@@ -2386,6 +2183,17 @@
                 </p>
 
                 <div style="display:flex; flex-direction:column; gap:12px;">
+                    <div style="background:#fef2f2; border:1px solid #fca5a5; border-radius:var(--radius-md); padding:14px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                            <strong style="color:#991b1b; font-size:0.92rem;"><i class="fa-solid fa-mountain-sun"></i> Alba al Monte Bromo: Rischio vita & Discesa 'a striscio' di Elena</strong>
+                            <span class="badge badge-red" style="font-size:0.68rem;">Monte Bromo</span>
+                        </div>
+                        <p style="font-size:0.88rem; color:#7f1d1d; line-height:1.5;">
+                            Abbiamo letteralmente rischiato la morte per raggiungere un punto panoramico mozzafiato e vedere l'alba del Monte Bromo! 🌅🏔️😱<br>
+                            Dopo l'alba, Elena, sopraffatta dalle vertigini per il percorso impervio, è dovuta scendere strisciando per terra, un pò imbarazzata, e si è sporcata completamente di polvere e cenere vulcanica! 🌋🧹🛝😂
+                        </p>
+                    </div>
+
                     <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius-md); padding:14px;">
                         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
                             <strong style="color:#b45309; font-size:0.92rem;"><i class="fa-solid fa-flask"></i> Test della leggendaria 'purghetta'</strong>
@@ -2591,14 +2399,14 @@
                     </label>
 
                     <label class="checklist-item checked">
-                        <input type="checkbox" checked onchange="updateProgress(this)" data-id="d5" checked>
+                        <input type="checkbox" checked onchange="updateProgress(this)" data-id="d5">
                         <div class="checklist-text">
                             Attivazione / Prima transazione Revolut per pagamenti senza commissioni <span class="completed-tag"><i class="fa-solid fa-check"></i> FATTO</span>
                         </div>
                     </label>
 
                     <label class="checklist-item checked">
-                        <input type="checkbox" checked onchange="updateProgress(this)" data-id="d6" checked>
+                        <input type="checkbox" checked onchange="updateProgress(this)" data-id="d6">
                         <div class="checklist-text">
                             Camminare con le scarpe nuove Adidas Terrex prima di partire! <span class="completed-tag"><i class="fa-solid fa-check"></i> FATTO</span>
                         </div>
@@ -2642,35 +2450,35 @@
                 </h3>
 
                 <label class="checklist-item checked">
-                    <input type="checkbox" checked onchange="updateProgress(this)" data-id="m1" checked>
+                    <input type="checkbox" checked onchange="updateProgress(this)" data-id="m1">
                     <div class="checklist-text">
                         Transazione & Ricarica Revolut <span class="completed-tag"><i class="fa-solid fa-check"></i> FATTO</span>
                     </div>
                 </label>
 
                 <label class="checklist-item checked">
-                    <input type="checkbox" checked onchange="updateProgress(this)" data-id="m2" checked>
+                    <input type="checkbox" checked onchange="updateProgress(this)" data-id="m2">
                     <div class="checklist-text">
                         Collaudare / Camminare con scarpe nuove <span class="completed-tag"><i class="fa-solid fa-check"></i> FATTO</span>
                     </div>
                 </label>
 
                 <label class="checklist-item checked">
-                    <input type="checkbox" checked onchange="updateProgress(this)" data-id="m3" checked>
+                    <input type="checkbox" checked onchange="updateProgress(this)" data-id="m3">
                     <div class="checklist-text">
                         Lavare borsa Uniqlo <span class="completed-tag"><i class="fa-solid fa-check"></i> FATTO</span>
                     </div>
                 </label>
 
                 <label class="checklist-item checked">
-                    <input type="checkbox" checked onchange="updateProgress(this)" data-id="m4" checked>
+                    <input type="checkbox" checked onchange="updateProgress(this)" data-id="m4">
                     <div class="checklist-text">
                         Prenotare Taxi per Aeroporto FCO <span class="completed-tag"><i class="fa-solid fa-check"></i> FATTO</span>
                     </div>
                 </label>
 
                 <label class="checklist-item checked">
-                    <input type="checkbox" checked onchange="updateProgress(this)" data-id="m5" checked>
+                    <input type="checkbox" checked onchange="updateProgress(this)" data-id="m5">
                     <div class="checklist-text">
                         Acquisto Powerbank <span class="completed-tag"><i class="fa-solid fa-check"></i> FATTO</span>
                     </div>
@@ -3117,7 +2925,7 @@
             document.getElementById('detail-modal').classList.remove('active');
         }
 
-        // Departure date for Countdown: August 2, 2026 at 09:40 AM
+        // Departure date for Countdown: August 15, 2026 at 20:55 PM
         const departureDate = new Date('2026-08-15T20:55:00').getTime();
 
         function updateCountdown() {
@@ -3275,7 +3083,7 @@
         }
 
         // Packing List Progress & LocalStorage
-                function updateProgress(cb) {
+        function updateProgress(cb) {
             if (cb) {
                 const parent = cb.closest('.checklist-item');
                 if (cb.checked) {
@@ -3307,7 +3115,6 @@
         }
 
         function loadState() {
-            // Force all checkboxes to true by default to guarantee 100% progress
             const saved = localStorage.getItem('indonesia_2026_packing');
             let state = {};
             if (saved) {
@@ -3319,7 +3126,7 @@
                 if (id && state[id] !== undefined) {
                     cb.checked = state[id];
                 } else {
-                    cb.checked = true; // Default to checked if no saved value
+                    cb.checked = true; // Default to checked
                 }
                 
                 const item = cb.closest('.checklist-item');
@@ -3332,7 +3139,6 @@
                 }
             });
             
-            // If localStorage was empty or partial, save 100% state immediately
             if (!saved) {
                 saveState();
             }
@@ -3431,7 +3237,7 @@
                 data: {
                     labels: [
                         '2 Aug (Voli)', '3 Aug (Jogja)', '4 Aug (Borobudur)', '5 Aug (Treno)',
-                        '6 Aug (Bromo/Traghetto)', '7 Aug (Ubud Nord)', '8 Aug (Cascate)', '9 Aug (Komodo Arr)',
+                        '6 Aug (Bromo/Traghetto)', '7 Aug (Ubud Nord)', '8 Aug (Cascate)', '9 Aug (Sangeh/Komodo)',
                         '10 Aug (Crociera 1)', '11 Aug (Padar/Draghi)', '12 Aug (Ubud Spa)', '13 Aug (Ubud Relax)',
                         '14 Aug (Volo CGK)', '15 Aug (Arrivo FCO)'
                     ],
