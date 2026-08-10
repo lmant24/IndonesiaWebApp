@@ -217,7 +217,7 @@
     /* Sticky Nav Wrapper */
     .sticky-nav-wrapper {
         position: sticky;
-        top: 0;
+        top: var(--supplies-bar-height, 50px);
         z-index: 1000;
         background: rgba(255, 255, 255, 0.96);
         backdrop-filter: blur(16px);
@@ -1017,11 +1017,152 @@
         margin-top: 2px;
         flex-shrink: 0;
     }
+
+    /* Supplies Status Bar */
+    .supplies-bar {
+        position: sticky;
+        top: 0;
+        z-index: 1100;
+        background: #0f172a;
+        display: flex;
+        align-items: stretch;
+        padding: 8px 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+        height: var(--supplies-bar-height, 50px);
+    }
+
+    .supplies-bar-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .supply-item {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px 6px;
+    }
+
+    .supply-item + .supply-item {
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        padding-left: 12px;
+    }
+
+    .supply-icon {
+        flex-shrink: 0;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        color: white;
+    }
+
+    .supply-icon.spray { background: linear-gradient(135deg, #7c3aed, #4c1d95); }
+    .supply-icon.sunscreen { background: linear-gradient(135deg, #f59e0b, #b45309); }
+    .supply-icon.mind { background: linear-gradient(135deg, #0ea5e9, #0369a1); }
+
+    .supply-body {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .supply-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 6px;
+        margin-bottom: 3px;
+    }
+
+    .supply-label {
+        font-size: 0.62rem;
+        font-weight: 700;
+        color: #94a3b8;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .supply-value {
+        font-size: 0.72rem;
+        font-weight: 800;
+        color: #ffffff;
+        flex-shrink: 0;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .supply-track {
+        background: rgba(255, 255, 255, 0.1);
+        height: 6px;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .supply-fill {
+        height: 100%;
+        border-radius: 4px;
+        transition: width 0.4s ease;
+    }
+
+    .supply-fill.ok { background: linear-gradient(90deg, #10b981, #059669); }
+    .supply-fill.warn { background: linear-gradient(90deg, #f59e0b, #d97706); }
+    .supply-fill.low { background: linear-gradient(90deg, #ef4444, #b91c1c); }
+
+    @media (max-width: 480px) {
+        .supply-label { display: none; }
+        .supply-icon { width: 22px; height: 22px; font-size: 0.72rem; }
+    }
     </style>
     <!-- Chart.js per Grafico Esperienza -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+
+    <!-- Supplies Status Bar -->
+    <div class="supplies-bar">
+        <div class="supplies-bar-inner">
+            <div class="supply-item">
+                <div class="supply-icon spray"><i class="fa-solid fa-spray-can-sparkles"></i></div>
+                <div class="supply-body">
+                    <div class="supply-top">
+                        <span class="supply-label">Spray Antizanzare</span>
+                        <span class="supply-value">82%</span>
+                    </div>
+                    <div class="supply-track"><div class="supply-fill ok" style="width: 82%;"></div></div>
+                </div>
+            </div>
+            <div class="supply-item">
+                <div class="supply-icon sunscreen"><i class="fa-solid fa-sun"></i></div>
+                <div class="supply-body">
+                    <div class="supply-top">
+                        <span class="supply-label">Crema Solare</span>
+                        <span class="supply-value">100%</span>
+                    </div>
+                    <div class="supply-track"><div class="supply-fill ok" style="width: 100%;"></div></div>
+                </div>
+            </div>
+            <div class="supply-item">
+                <div class="supply-icon mind"><i class="fa-solid fa-brain"></i></div>
+                <div class="supply-body">
+                    <div class="supply-top">
+                        <span class="supply-label">Salute Mentale</span>
+                        <span class="supply-value">75%</span>
+                    </div>
+                    <div class="supply-track"><div class="supply-fill ok" style="width: 75%;"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Header / Hero Section -->
     <header class="hero">
