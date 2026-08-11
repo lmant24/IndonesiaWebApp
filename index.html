@@ -3171,8 +3171,8 @@
             document.getElementById('detail-modal').classList.remove('active');
         }
 
-        // Departure date for Countdown: August 15, 2026 at 20:55 PM
-        const departureDate = new Date('2026-08-15T20:55:00').getTime();
+        // Departure date for Countdown: August 15, 2026 at 20:55 PM (Rome time, CEST = UTC+2)
+        const departureDate = new Date('2026-08-15T20:55:00+02:00').getTime();
 
         function updateCountdown() {
             const now = new Date().getTime();
@@ -3200,9 +3200,9 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // Trip Progress Calculation (From Aug 2, 2026 09:40 to Aug 15, 2026 20:55)
-        const tripStartDate = new Date('2026-08-02T09:40:00').getTime();
-        const tripEndDate = new Date('2026-08-15T20:55:00').getTime();
+        // Trip Progress Calculation (From Aug 2, 2026 09:40 to Aug 15, 2026 20:55, Rome time, CEST = UTC+2)
+        const tripStartDate = new Date('2026-08-02T09:40:00+02:00').getTime();
+        const tripEndDate = new Date('2026-08-15T20:55:00+02:00').getTime();
 
         function updateTripProgress() {
             const now = new Date().getTime();
