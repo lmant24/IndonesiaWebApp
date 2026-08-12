@@ -1258,6 +1258,10 @@
                     <i class="fa-solid fa-map-location-dot"></i>
                     <span>Itinerario</span>
                 </button>
+                <button class="nav-btn" id="btn-tab-tempi" onclick="switchTab('tempi', this)">
+                    <i class="fa-solid fa-hourglass-half"></i>
+                    <span>Tempi</span>
+                </button>
                 <button class="nav-btn" id="btn-tab-voli" onclick="switchTab('voli', this)">
                     <i class="fa-solid fa-plane"></i>
                     <span>Voli & Treni</span>
@@ -1285,10 +1289,6 @@
                 <button class="nav-btn" id="btn-tab-grafico" onclick="switchTab('grafico', this)">
                     <i class="fa-solid fa-chart-line"></i>
                     <span>Metrics</span>
-                </button>
-                <button class="nav-btn" id="btn-tab-tempi" onclick="switchTab('tempi', this)">
-                    <i class="fa-solid fa-hourglass-half"></i>
-                    <span>Tempi Viaggio</span>
                 </button>
                 <button class="nav-btn" id="btn-tab-diario" onclick="switchTab('diario', this)">
                     <i class="fa-solid fa-book-journal-whills"></i>
@@ -1891,6 +1891,80 @@
             </div>
         </section>
 
+        <!-- TAB: TEMPI DI VIAGGIO -->
+        <section id="tab-tempi" class="tab-content">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fa-solid fa-hourglass-half"></i> Come si Distribuisce il Tempo del Viaggio</h2>
+            </div>
+
+            <div class="card" style="padding: 16px;">
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 4px;">
+                    <i class="fa-solid fa-circle-info" style="color:var(--primary);"></i> Stima di quante ore vengono passate in ciascun mezzo di trasporto (o negli aeroporti) durante tutto il viaggio, dalla partenza da FCO (2 Ago, 09:40) all'arrivo a FCO (15 Ago, 20:55).
+                </p>
+                <p style="font-size: 0.78rem; color: var(--text-muted);">
+                    Durata totale: <strong style="color:var(--text-main);">13 giorni e 11h15m (~323h)</strong>. I tempi dei voli e del treno sono calcolati dagli orari reali; i transfer via terra senza orario dichiarato nell'app (Bromo→Ketapang→Gilimanuk→Ubud, Lempuyang, tour giornalieri) sono <strong>stimati</strong> in base alle distanze.
+                </p>
+            </div>
+
+            <div class="card" style="padding: 16px;">
+                <div style="position: relative; height: 380px; width: 100%;">
+                    <canvas id="timeChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title" style="margin-bottom: 12px;"><i class="fa-solid fa-list-ol" style="color:var(--primary);"></i> Riepilogo per Categoria</h3>
+
+                <p style="font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--text-muted); margin-bottom:2px;">Spostamenti puri</p>
+                <div style="font-size:0.88rem; line-height:1.5;">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; border-bottom:1px solid #f1f5f9; padding:10px 0;">
+                        <span><i class="fa-solid fa-plane" style="color:#3b82f6; width:18px;"></i> <strong>Aereo</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">4 voli intercontinentali Qatar + 4 voli interni Indonesia</span></span>
+                        <strong style="white-space:nowrap; color:var(--text-main);">~34h</strong>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; border-bottom:1px solid #f1f5f9; padding:10px 0;">
+                        <span><i class="fa-solid fa-plane-circle-check" style="color:#0ea5e9; width:18px;"></i> <strong>Aeroporto</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Scali a Doha, attesa CGK 07:30-13:35, buffer pre-volo, immigrazione/dogana</span></span>
+                        <strong style="white-space:nowrap; color:var(--text-main);">~23h</strong>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; border-bottom:1px solid #f1f5f9; padding:10px 0;">
+                        <span><i class="fa-solid fa-ferry" style="color:#059669; width:18px;"></i> <strong>Nave</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Traghetto Ketapang→Gilimanuk (~1h) + 2 notti a bordo Phinisi Komodo (10-12 Ago, 49h)</span></span>
+                        <strong style="white-space:nowrap; color:var(--text-main);">~50h</strong>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; border-bottom:1px solid #f1f5f9; padding:10px 0;">
+                        <span><i class="fa-solid fa-car" style="color:#f59e0b; width:18px;"></i> <strong>Auto / Van / Jeep</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Jeep Bromo, transfer Bromo-Ketapang-Gilimanuk-Ubud, Borobudur/Prambanan, tour Ubud, Lempuyang, transfer aeroportuali</span></span>
+                        <strong style="white-space:nowrap; color:var(--text-main);">~30h</strong>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; padding:10px 0;">
+                        <span><i class="fa-solid fa-train" style="color:#8b5cf6; width:18px;"></i> <strong>Treno</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Yogyakarta (Tugu) → Probolinggo, 11:46-18:46</span></span>
+                        <strong style="white-space:nowrap; color:var(--text-main);">~7h</strong>
+                    </div>
+                </div>
+
+                <p style="font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--text-muted); margin:16px 0 2px;">"Altro" espanso — vita di viaggio (~179h totali, 7,5 giorni)</p>
+                <div style="font-size:0.88rem; line-height:1.5;">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; border-bottom:1px solid #f1f5f9; padding:10px 0;">
+                        <span><i class="fa-solid fa-bed" style="color:#475569; width:18px;"></i> <strong>Riposo Notturno</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Sonno nelle 12 notti a terra/in barca (~7h/notte media)</span></span>
+                        <strong style="white-space:nowrap; color:var(--text-main);">~85h</strong>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; border-bottom:1px solid #f1f5f9; padding:10px 0;">
+                        <span><i class="fa-solid fa-person-hiking" style="color:#14b8a6; width:18px;"></i> <strong>Attività & Escursioni</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Templi, trekking Bromo/Rinca, snorkeling, monkey forest, spa, danza</span></span>
+                        <strong style="white-space:nowrap; color:var(--text-main);">~55h</strong>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; border-bottom:1px solid #f1f5f9; padding:10px 0;">
+                        <span><i class="fa-solid fa-utensils" style="color:#fb923c; width:18px;"></i> <strong>Pasti</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Colazioni, pranzi e cene dedicate (Babi Guling, Taman Dedari, ecc.)</span></span>
+                        <strong style="white-space:nowrap; color:var(--text-main);">~20h</strong>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; padding:10px 0;">
+                        <span><i class="fa-solid fa-bag-shopping" style="color:#ec4899; width:18px;"></i> <strong>Tempo Libero & Shopping</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Piscina privata, relax in hotel, shopping ultimo giorno</span></span>
+                        <strong style="white-space:nowrap; color:var(--text-main);">~19h</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="curiosity-item">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <div>Stime arrotondate basate sull'itinerario. Il giorno più "in movimento" resta il <strong>6 Agosto</strong> (Bromo → traghetto → Ubud), con circa 10-12h totali tra jeep, attesa al porto e guida.</div>
+            </div>
+        </section>
 
         <!-- TAB 2: VOLI E SPOSTAMENTI -->
         <section id="tab-voli" class="tab-content">
@@ -2366,81 +2440,6 @@
                         • <strong>12-13 Aug (Ubud):</strong> Spa nelle grotte a Tjampuhan, passeggiate e relax.
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- TAB: TEMPI DI VIAGGIO -->
-        <section id="tab-tempi" class="tab-content">
-            <div class="section-header">
-                <h2 class="section-title"><i class="fa-solid fa-hourglass-half"></i> Come si Distribuisce il Tempo del Viaggio</h2>
-            </div>
-
-            <div class="card" style="padding: 16px;">
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 4px;">
-                    <i class="fa-solid fa-circle-info" style="color:var(--primary);"></i> Stima di quante ore vengono passate in ciascun mezzo di trasporto (o negli aeroporti) durante tutto il viaggio, dalla partenza da FCO (2 Ago, 09:40) all'arrivo a FCO (15 Ago, 20:55).
-                </p>
-                <p style="font-size: 0.78rem; color: var(--text-muted);">
-                    Durata totale: <strong style="color:var(--text-main);">13 giorni e 11h15m (~323h)</strong>. I tempi dei voli e del treno sono calcolati dagli orari reali; i transfer via terra senza orario dichiarato nell'app (Bromo→Ketapang→Gilimanuk→Ubud, Lempuyang, tour giornalieri) sono <strong>stimati</strong> in base alle distanze.
-                </p>
-            </div>
-
-            <div class="card" style="padding: 16px;">
-                <div style="position: relative; height: 380px; width: 100%;">
-                    <canvas id="timeChart"></canvas>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3 class="card-title" style="margin-bottom: 12px;"><i class="fa-solid fa-list-ol" style="color:var(--primary);"></i> Riepilogo per Categoria</h3>
-
-                <p style="font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--text-muted); margin-bottom:2px;">Spostamenti puri</p>
-                <div style="font-size:0.88rem; line-height:1.5;">
-                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; border-bottom:1px solid #f1f5f9; padding:10px 0;">
-                        <span><i class="fa-solid fa-plane" style="color:#3b82f6; width:18px;"></i> <strong>Aereo</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">4 voli intercontinentali Qatar + 4 voli interni Indonesia</span></span>
-                        <strong style="white-space:nowrap; color:var(--text-main);">~34h</strong>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; border-bottom:1px solid #f1f5f9; padding:10px 0;">
-                        <span><i class="fa-solid fa-plane-circle-check" style="color:#0ea5e9; width:18px;"></i> <strong>Aeroporto</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Scali a Doha, attesa CGK 07:30-13:35, buffer pre-volo, immigrazione/dogana</span></span>
-                        <strong style="white-space:nowrap; color:var(--text-main);">~23h</strong>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; border-bottom:1px solid #f1f5f9; padding:10px 0;">
-                        <span><i class="fa-solid fa-ferry" style="color:#059669; width:18px;"></i> <strong>Nave</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Traghetto Ketapang→Gilimanuk (~1h) + 2 notti a bordo Phinisi Komodo (10-12 Ago, 49h)</span></span>
-                        <strong style="white-space:nowrap; color:var(--text-main);">~50h</strong>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; border-bottom:1px solid #f1f5f9; padding:10px 0;">
-                        <span><i class="fa-solid fa-car" style="color:#f59e0b; width:18px;"></i> <strong>Auto / Van / Jeep</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Jeep Bromo, transfer Bromo-Ketapang-Gilimanuk-Ubud, Borobudur/Prambanan, tour Ubud, Lempuyang, transfer aeroportuali</span></span>
-                        <strong style="white-space:nowrap; color:var(--text-main);">~30h</strong>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; padding:10px 0;">
-                        <span><i class="fa-solid fa-train" style="color:#8b5cf6; width:18px;"></i> <strong>Treno</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Yogyakarta (Tugu) → Probolinggo, 11:46-18:46</span></span>
-                        <strong style="white-space:nowrap; color:var(--text-main);">~7h</strong>
-                    </div>
-                </div>
-
-                <p style="font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--text-muted); margin:16px 0 2px;">"Altro" espanso — vita di viaggio (~179h totali, 7,5 giorni)</p>
-                <div style="font-size:0.88rem; line-height:1.5;">
-                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; border-bottom:1px solid #f1f5f9; padding:10px 0;">
-                        <span><i class="fa-solid fa-bed" style="color:#475569; width:18px;"></i> <strong>Riposo Notturno</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Sonno nelle 12 notti a terra/in barca (~7h/notte media)</span></span>
-                        <strong style="white-space:nowrap; color:var(--text-main);">~85h</strong>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; border-bottom:1px solid #f1f5f9; padding:10px 0;">
-                        <span><i class="fa-solid fa-person-hiking" style="color:#14b8a6; width:18px;"></i> <strong>Attività & Escursioni</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Templi, trekking Bromo/Rinca, snorkeling, monkey forest, spa, danza</span></span>
-                        <strong style="white-space:nowrap; color:var(--text-main);">~55h</strong>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; border-bottom:1px solid #f1f5f9; padding:10px 0;">
-                        <span><i class="fa-solid fa-utensils" style="color:#fb923c; width:18px;"></i> <strong>Pasti</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Colazioni, pranzi e cene dedicate (Babi Guling, Taman Dedari, ecc.)</span></span>
-                        <strong style="white-space:nowrap; color:var(--text-main);">~20h</strong>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; padding:10px 0;">
-                        <span><i class="fa-solid fa-bag-shopping" style="color:#ec4899; width:18px;"></i> <strong>Tempo Libero & Shopping</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Piscina privata, relax in hotel, shopping ultimo giorno</span></span>
-                        <strong style="white-space:nowrap; color:var(--text-main);">~19h</strong>
-                    </div>
-                </div>
-            </div>
-
-            <div class="curiosity-item">
-                <i class="fa-solid fa-triangle-exclamation"></i>
-                <div>Stime arrotondate basate sull'itinerario. Il giorno più "in movimento" resta il <strong>6 Agosto</strong> (Bromo → traghetto → Ubud), con circa 10-12h totali tra jeep, attesa al porto e guida.</div>
             </div>
         </section>
 
