@@ -2385,13 +2385,15 @@
             </div>
 
             <div class="card" style="padding: 16px;">
-                <div style="position: relative; height: 280px; width: 100%;">
+                <div style="position: relative; height: 380px; width: 100%;">
                     <canvas id="timeChart"></canvas>
                 </div>
             </div>
 
             <div class="card">
                 <h3 class="card-title" style="margin-bottom: 12px;"><i class="fa-solid fa-list-ol" style="color:var(--primary);"></i> Riepilogo per Categoria</h3>
+
+                <p style="font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--text-muted); margin-bottom:2px;">Spostamenti puri</p>
                 <div style="font-size:0.88rem; line-height:1.5;">
                     <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; border-bottom:1px solid #f1f5f9; padding:10px 0;">
                         <span><i class="fa-solid fa-plane" style="color:#3b82f6; width:18px;"></i> <strong>Aereo</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">4 voli intercontinentali Qatar + 4 voli interni Indonesia</span></span>
@@ -2409,43 +2411,30 @@
                         <span><i class="fa-solid fa-car" style="color:#f59e0b; width:18px;"></i> <strong>Auto / Van / Jeep</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Jeep Bromo, transfer Bromo-Ketapang-Gilimanuk-Ubud, Borobudur/Prambanan, tour Ubud, Lempuyang, transfer aeroportuali</span></span>
                         <strong style="white-space:nowrap; color:var(--text-main);">~30h</strong>
                     </div>
-                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; border-bottom:1px solid #f1f5f9; padding:10px 0;">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; padding:10px 0;">
                         <span><i class="fa-solid fa-train" style="color:#8b5cf6; width:18px;"></i> <strong>Treno</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Yogyakarta (Tugu) → Probolinggo, 11:46-18:46</span></span>
                         <strong style="white-space:nowrap; color:var(--text-main);">~7h</strong>
                     </div>
-                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; padding:10px 0;">
-                        <span><i class="fa-solid fa-umbrella-beach" style="color:#94a3b8; width:18px;"></i> <strong>Altro</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Sonno, attività, pasti, tempo libero — vedi dettaglio sotto</span></span>
-                        <strong style="white-space:nowrap; color:var(--text-main);">~179h</strong>
+                </div>
+
+                <p style="font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--text-muted); margin:16px 0 2px;">"Altro" espanso — vita di viaggio (~179h totali, 7,5 giorni)</p>
+                <div style="font-size:0.88rem; line-height:1.5;">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; border-bottom:1px solid #f1f5f9; padding:10px 0;">
+                        <span><i class="fa-solid fa-bed" style="color:#475569; width:18px;"></i> <strong>Riposo Notturno</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Sonno nelle 12 notti a terra/in barca (~7h/notte media)</span></span>
+                        <strong style="white-space:nowrap; color:var(--text-main);">~85h</strong>
                     </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3 class="card-title" style="margin-bottom: 4px;"><i class="fa-solid fa-magnifying-glass" style="color:var(--primary);"></i> "Altro" Espanso: dove vanno le altre ~179h (7,5 giorni)</h3>
-                <p style="font-size:0.78rem; color:var(--text-muted); margin-bottom:14px;">Tutto il tempo del viaggio che non è puro spostamento: dormire, visitare, mangiare, rilassarsi.</p>
-
-                <div class="packing-progress" style="height: 22px; display:flex; overflow:hidden; margin-bottom:16px;">
-                    <div style="width:47.5%; background:#64748b;" title="Riposo Notturno ~47%"></div>
-                    <div style="width:30.7%; background:#10b981;" title="Attività & Escursioni ~31%"></div>
-                    <div style="width:11.2%; background:#f59e0b;" title="Pasti ~11%"></div>
-                    <div style="width:10.6%; background:#38bdf8;" title="Tempo Libero & Shopping ~11%"></div>
-                </div>
-
-                <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; border-bottom:1px solid #f1f5f9; padding:10px 0;">
-                    <span><span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:#64748b; margin-right:8px;"></span><strong>Riposo Notturno</strong><br><span style="font-size:0.78rem; color:var(--text-muted); margin-left:18px;">Sonno nelle 12 notti a terra/in barca (~7h/notte media)</span></span>
-                    <strong style="white-space:nowrap; color:var(--text-main);">~85h</strong>
-                </div>
-                <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; border-bottom:1px solid #f1f5f9; padding:10px 0;">
-                    <span><span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:#10b981; margin-right:8px;"></span><strong>Attività & Escursioni</strong><br><span style="font-size:0.78rem; color:var(--text-muted); margin-left:18px;">Templi, trekking Bromo/Rinca, snorkeling, monkey forest, spa, danza</span></span>
-                    <strong style="white-space:nowrap; color:var(--text-main);">~55h</strong>
-                </div>
-                <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; border-bottom:1px solid #f1f5f9; padding:10px 0;">
-                    <span><span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:#f59e0b; margin-right:8px;"></span><strong>Pasti</strong><br><span style="font-size:0.78rem; color:var(--text-muted); margin-left:18px;">Colazioni, pranzi e cene dedicate (Babi Guling, Taman Dedari, ecc.)</span></span>
-                    <strong style="white-space:nowrap; color:var(--text-main);">~20h</strong>
-                </div>
-                <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; padding:10px 0;">
-                    <span><span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:#38bdf8; margin-right:8px;"></span><strong>Tempo Libero & Shopping</strong><br><span style="font-size:0.78rem; color:var(--text-muted); margin-left:18px;">Piscina privata, relax in hotel, shopping ultimo giorno</span></span>
-                    <strong style="white-space:nowrap; color:var(--text-main);">~19h</strong>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; border-bottom:1px solid #f1f5f9; padding:10px 0;">
+                        <span><i class="fa-solid fa-person-hiking" style="color:#14b8a6; width:18px;"></i> <strong>Attività & Escursioni</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Templi, trekking Bromo/Rinca, snorkeling, monkey forest, spa, danza</span></span>
+                        <strong style="white-space:nowrap; color:var(--text-main);">~55h</strong>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; border-bottom:1px solid #f1f5f9; padding:10px 0;">
+                        <span><i class="fa-solid fa-utensils" style="color:#fb923c; width:18px;"></i> <strong>Pasti</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Colazioni, pranzi e cene dedicate (Babi Guling, Taman Dedari, ecc.)</span></span>
+                        <strong style="white-space:nowrap; color:var(--text-main);">~20h</strong>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; padding:10px 0;">
+                        <span><i class="fa-solid fa-bag-shopping" style="color:#ec4899; width:18px;"></i> <strong>Tempo Libero & Shopping</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Piscina privata, relax in hotel, shopping ultimo giorno</span></span>
+                        <strong style="white-space:nowrap; color:var(--text-main);">~19h</strong>
+                    </div>
                 </div>
             </div>
 
@@ -3762,10 +3751,13 @@
             timeChart = new Chart(ctx, {
                 type: 'doughnut',
                 data: {
-                    labels: ['Aereo (~34h)', 'Aeroporto (~23h)', 'Nave (~50h)', 'Auto/Van/Jeep (~30h)', 'Treno (~7h)', 'Altro (~179h)'],
+                    labels: [
+                        'Aereo (~34h)', 'Aeroporto (~23h)', 'Nave (~50h)', 'Auto/Van/Jeep (~30h)', 'Treno (~7h)',
+                        'Riposo Notturno (~85h)', 'Attività & Escursioni (~55h)', 'Pasti (~20h)', 'Tempo Libero & Shopping (~19h)'
+                    ],
                     datasets: [{
-                        data: [34, 23, 50, 30, 7, 179],
-                        backgroundColor: ['#3b82f6', '#0ea5e9', '#059669', '#f59e0b', '#8b5cf6', '#94a3b8'],
+                        data: [34, 23, 50, 30, 7, 85, 55, 20, 19],
+                        backgroundColor: ['#3b82f6', '#0ea5e9', '#059669', '#f59e0b', '#8b5cf6', '#475569', '#14b8a6', '#fb923c', '#ec4899'],
                         borderColor: '#ffffff',
                         borderWidth: 2
                     }]
