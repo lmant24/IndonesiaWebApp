@@ -448,6 +448,79 @@
     .badge-purple { background: #f3e8ff; color: #6b21a8; border: 1px solid #e9d5ff; }
     .badge-red { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
 
+    /* Diario di Bordo - Note */
+    .diario-legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .diario-note {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        border: 1px solid;
+        border-radius: var(--radius-md);
+        padding: 14px;
+        transition: var(--transition);
+    }
+
+    .diario-note:hover {
+        box-shadow: var(--shadow-sm);
+        transform: translateY(-1px);
+    }
+
+    .diario-note-icon {
+        flex-shrink: 0;
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+    }
+
+    .diario-note-body { flex: 1; min-width: 0; }
+
+    .diario-note-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 6px;
+    }
+
+    .diario-note-title { font-size: 0.92rem; font-weight: 700; }
+    .diario-note-text { font-size: 0.88rem; line-height: 1.5; }
+
+    .diario-risk { background: #fef2f2; border-color: #fca5a5; }
+    .diario-risk .diario-note-icon { background: #fee2e2; color: #991b1b; }
+    .diario-risk .diario-note-title { color: #991b1b; }
+    .diario-risk .diario-note-text { color: #7f1d1d; }
+
+    .diario-fun { background: #fffbeb; border-color: #fde68a; }
+    .diario-fun .diario-note-icon { background: #fef3c7; color: #b45309; }
+    .diario-fun .diario-note-title { color: #b45309; }
+    .diario-fun .diario-note-text { color: #78350f; }
+
+    .diario-food { background: #eff6ff; border-color: #bfdbfe; }
+    .diario-food .diario-note-icon { background: #dbeafe; color: #1e40af; }
+    .diario-food .diario-note-title { color: #1e40af; }
+    .diario-food .diario-note-text { color: #1e3a8a; }
+
+    .diario-nature { background: #faf5ff; border-color: #e9d5ff; }
+    .diario-nature .diario-note-icon { background: #f3e8ff; color: #6b21a8; }
+    .diario-nature .diario-note-title { color: #6b21a8; }
+    .diario-nature .diario-note-text { color: #581c87; }
+
+    .diario-people { background: var(--primary-light); border-color: var(--primary-border); }
+    .diario-people .diario-note-icon { background: #d1fae5; color: var(--primary-dark); }
+    .diario-people .diario-note-title { color: var(--primary-dark); }
+    .diario-people .diario-note-text { color: #065f46; }
+
     /* Itinerario Timeline */
     .day-selector-container {
         position: relative;
@@ -2466,236 +2539,313 @@
                     Un registro live degli imprevisti, risate, piccoli infortuni e momenti indimenticabili accaduti durante la vacanza.
                 </p>
 
+                <div class="diario-legend">
+                    <span class="badge badge-red"><i class="fa-solid fa-triangle-exclamation"></i> Rischi & Imprevisti</span>
+                    <span class="badge badge-amber"><i class="fa-solid fa-face-laugh-beam"></i> Aneddoti & Risate</span>
+                    <span class="badge badge-blue"><i class="fa-solid fa-utensils"></i> Cibo & Degustazioni</span>
+                    <span class="badge badge-purple"><i class="fa-solid fa-paw"></i> Natura & Curiosità</span>
+                    <span class="badge badge-green"><i class="fa-solid fa-heart"></i> Amicizie Speciali</span>
+                </div>
+
                 <div style="display:flex; flex-direction:column; gap:12px;">
-                    <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#b45309; font-size:0.92rem;"><i class="fa-solid fa-truck"></i> Aironi e anguille</strong>
-                            <span class="badge badge-amber" style="font-size:0.68rem;">Aironi pportunisti</span>
+                    <div class="diario-note diario-nature">
+                        <div class="diario-note-icon"><i class="fa-solid fa-crow"></i></div>
+                        <div class="diario-note-body">
+                            <div class="diario-note-header">
+                                <strong class="diario-note-title">Aironi e anguille</strong>
+                                <span class="badge badge-purple" style="font-size:0.68rem;">Aironi opportunisti</span>
+                            </div>
+                            <p class="diario-note-text">
+                                Il continuo passaggio dei trattori nelle risaie smuove la melma e scova le prede nascoste nel fango, trasformando l'aratura in un banchetto facile per gli aironi.
+                            </p>
                         </div>
-                        <p style="font-size:0.88rem; color:#78350f; line-height:1.5;">
-                            Il continuo passaggio dei trattori nelle risaie smuove la melma e scova le prede nascoste nel fango, trasformando l'aratura in un banchetto facile per gli aironi.
-                        </p>
                     </div>
 
-                    <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#b45309; font-size:0.92rem;"><i class="fa-solid fa-truck"></i> Bandiere ovunque</strong>
-                            <span class="badge badge-amber" style="font-size:0.68rem;">Bandiere indonesiane</span>
+                    <div class="diario-note diario-nature">
+                        <div class="diario-note-icon"><i class="fa-solid fa-flag"></i></div>
+                        <div class="diario-note-body">
+                            <div class="diario-note-header">
+                                <strong class="diario-note-title">Bandiere ovunque</strong>
+                                <span class="badge badge-purple" style="font-size:0.68rem;">Bandiere indonesiane</span>
+                            </div>
+                            <p class="diario-note-text">
+                                Strade piene di bandiere indonesiane
+                            </p>
                         </div>
-                        <p style="font-size:0.88rem; color:#78350f; line-height:1.5;">
-                            Strade piene di bandiere indonesiane
-                        </p>
-                    </div>
-                    
-                    <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#b45309; font-size:0.92rem;"><i class="fa-solid fa-truck"></i> Camion a Bali & Antonio</strong>
-                            <span class="badge badge-amber" style="font-size:0.68rem;">Traffic & Vibe</span>
-                        </div>
-                        <p style="font-size:0.88rem; color:#78350f; line-height:1.5;">
-                            Bali è piena di camion e Antonio li odia tutti! 🚛😤🚫
-                        </p>
                     </div>
 
-                    <div style="background:#fef2f2; border:1px solid #fca5a5; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#991b1b; font-size:0.92rem;"><i class="fa-solid fa-mountain-sun"></i> Alba al Monte Bromo: Rischio vita & Discesa 'a striscio' di Elena</strong>
-                            <span class="badge badge-red" style="font-size:0.68rem;">Monte Bromo</span>
+                    <div class="diario-note diario-fun">
+                        <div class="diario-note-icon"><i class="fa-solid fa-truck"></i></div>
+                        <div class="diario-note-body">
+                            <div class="diario-note-header">
+                                <strong class="diario-note-title">Camion a Bali & Antonio</strong>
+                                <span class="badge badge-amber" style="font-size:0.68rem;">Traffic & Vibe</span>
+                            </div>
+                            <p class="diario-note-text">
+                                Bali è piena di camion e Antonio li odia tutti! 🚛😤🚫
+                            </p>
                         </div>
-                        <p style="font-size:0.88rem; color:#7f1d1d; line-height:1.5;">
-                            Abbiamo letteralmente rischiato la morte per raggiungere un punto panoramico mozzafiato e vedere l'alba del Monte Bromo! 🌅🏔️😱<br>
-                            Dopo l'alba, Elena, sopraffatta dalle vertigini per il percorso impervio, è dovuta scendere strisciando per terra, un pò imbarazzata, e si è sporcata completamente di polvere e cenere vulcanica! 🌋🧹🛝😂
-                        </p>
                     </div>
 
-                    <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#b45309; font-size:0.92rem;"><i class="fa-solid fa-flask"></i> Test della leggendaria 'purghetta'</strong>
-                            <span class="badge badge-amber" style="font-size:0.68rem;">Esperimenti</span>
+                    <div class="diario-note diario-risk">
+                        <div class="diario-note-icon"><i class="fa-solid fa-mountain-sun"></i></div>
+                        <div class="diario-note-body">
+                            <div class="diario-note-header">
+                                <strong class="diario-note-title">Alba al Monte Bromo: Rischio vita & Discesa 'a striscio' di Elena</strong>
+                                <span class="badge badge-red" style="font-size:0.68rem;">Monte Bromo</span>
+                            </div>
+                            <p class="diario-note-text">
+                                Abbiamo letteralmente rischiato la morte per raggiungere un punto panoramico mozzafiato e vedere l'alba del Monte Bromo! 🌅🏔️😱<br>
+                                Dopo l'alba, Elena, sopraffatta dalle vertigini per il percorso impervio, è dovuta scendere strisciando per terra, un pò imbarazzata, e si è sporcata completamente di polvere e cenere vulcanica! 🌋🧹🛝😂
+                            </p>
                         </div>
-                        <p style="font-size:0.88rem; color:#78350f; line-height:1.5;">
-                            Abbiamo testato la 'purghetta', una leggendaria bevanda orientale. Confermiamo che funziona come propulsore a scoppio per il nostro sistema di scarico biologico! 🧪💥🚽🚀
-                        </p>
                     </div>
 
-                    <div style="background:#fef2f2; border:1px solid #fca5a5; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#991b1b; font-size:0.92rem;"><i class="fa-solid fa-train-subway"></i> Il quasi-disastro della borsa sul treno</strong>
-                            <span class="badge badge-red" style="font-size:0.68rem;">Treno & Panico</span>
+                    <div class="diario-note diario-fun">
+                        <div class="diario-note-icon"><i class="fa-solid fa-poop"></i></div>
+                        <div class="diario-note-body">
+                            <div class="diario-note-header">
+                                <strong class="diario-note-title">Test della leggendaria 'purghetta'</strong>
+                                <span class="badge badge-amber" style="font-size:0.68rem;">Esperimenti</span>
+                            </div>
+                            <p class="diario-note-text">
+                                Abbiamo testato la 'purghetta', una leggendaria bevanda orientale. Confermiamo che funziona come propulsore a scoppio per il nostro sistema di scarico biologico! 🧪💥🚽🚀
+                            </p>
                         </div>
-                        <p style="font-size:0.88rem; color:#7f1d1d; line-height:1.5;">
-                            Elena e Antonio stavano per dimenticare la borsa con tutti i documenti sul treno! Con uno scatto da centometristi e un lavoro di squadra epico per impedire al treno di ripartire, sono riusciti a recuperare tutto appena in tempo! 🏃‍♂️👜🚂💨
-                        </p>
                     </div>
 
-                    <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#b45309; font-size:0.92rem;"><i class="fa-solid fa-car-side"></i> Gaffe del Tassista ("I am a woman, sir...")</strong>
-                            <span class="badge badge-amber" style="font-size:0.68rem;">Aneddoti</span>
+                    <div class="diario-note diario-risk">
+                        <div class="diario-note-icon"><i class="fa-solid fa-train-subway"></i></div>
+                        <div class="diario-note-body">
+                            <div class="diario-note-header">
+                                <strong class="diario-note-title">Il quasi-disastro della borsa sul treno</strong>
+                                <span class="badge badge-red" style="font-size:0.68rem;">Treno & Panico</span>
+                            </div>
+                            <p class="diario-note-text">
+                                Elena e Antonio stavano per dimenticare la borsa con tutti i documenti sul treno! Con uno scatto da centometristi e un lavoro di squadra epico per impedire al treno di ripartire, sono riusciti a recuperare tutto appena in tempo! 🏃‍♂️👜🚂💨
+                            </p>
                         </div>
-                        <p style="font-size:0.88rem; color:#78350f; line-height:1.5;">
-                            Antonio ha salutato la tassista dicendo "Sir", ma lei ha subito risposto esclamando: "I am a woman, sir..."! 🚗👩🏻‍✈️😂
-                        </p>
                     </div>
 
-                    <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#b45309; font-size:0.92rem;"><i class="fa-solid fa-mug-hot"></i> Degustazione Kopi Luwak ("Caccaffè")</strong>
-                            <span class="badge badge-amber" style="font-size:0.68rem;">Giava / Bali</span>
+                    <div class="diario-note diario-fun">
+                        <div class="diario-note-icon"><i class="fa-solid fa-taxi"></i></div>
+                        <div class="diario-note-body">
+                            <div class="diario-note-header">
+                                <strong class="diario-note-title">Gaffe del Tassista ("I am a woman, sir...")</strong>
+                                <span class="badge badge-amber" style="font-size:0.68rem;">Aneddoti</span>
+                            </div>
+                            <p class="diario-note-text">
+                                Antonio ha salutato la tassista dicendo "Sir", ma lei ha subito risposto esclamando: "I am a woman, sir..."! 🚗👩🏻‍✈️😂
+                            </p>
                         </div>
-                        <p style="font-size:0.88rem; color:#78350f; line-height:1.5;">
-                            Assaggiato il famoso "caccaffè" (Kopi Luwak), la pregiata varietà di caffè prodotta con i chicchi digeriti ed espulsi dal Luwak (zibetto delle palme). ☕🦡
-                        </p>
                     </div>
 
-                    <div style="background:#fef2f2; border:1px solid #fca5a5; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#991b1b; font-size:0.92rem;"><i class="fa-solid fa-plane-circle-exclamation"></i> Volo Citilink Anticipato</strong>
-                            <span class="badge badge-red" style="font-size:0.68rem;">Imprevisto Voli</span>
+                    <div class="diario-note diario-food">
+                        <div class="diario-note-icon"><i class="fa-solid fa-mug-hot"></i></div>
+                        <div class="diario-note-body">
+                            <div class="diario-note-header">
+                                <strong class="diario-note-title">Degustazione Kopi Luwak ("Caccaffè")</strong>
+                                <span class="badge badge-blue" style="font-size:0.68rem;">Giava / Bali</span>
+                            </div>
+                            <p class="diario-note-text">
+                                Assaggiato il famoso "caccaffè" (Kopi Luwak), la pregiata varietà di caffè prodotta con i chicchi digeriti ed espulsi dal Luwak (zibetto delle palme). ☕🦡
+                            </p>
                         </div>
-                        <p style="font-size:0.88rem; color:#7f1d1d; line-height:1.5;">
-                            La compagnia aerea Citilink ha anticipato l'orario del volo e purtroppo non possiamo più prenderlo. Risoluzione e riorganizzazione dell'itinerario in corso! ✈️⚠️
-                        </p>
                     </div>
 
-                    <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#b45309; font-size:0.92rem;"><i class="fa-solid fa-bandage"></i> Piccolo Infortunio di Valeria</strong>
-                            <span class="badge badge-red" style="font-size:0.68rem;">Giava</span>
+                    <div class="diario-note diario-risk">
+                        <div class="diario-note-icon"><i class="fa-solid fa-plane-circle-exclamation"></i></div>
+                        <div class="diario-note-body">
+                            <div class="diario-note-header">
+                                <strong class="diario-note-title">Volo Citilink Anticipato</strong>
+                                <span class="badge badge-red" style="font-size:0.68rem;">Imprevisto Voli</span>
+                            </div>
+                            <p class="diario-note-text">
+                                La compagnia aerea Citilink ha anticipato l'orario del volo e purtroppo non possiamo più prenderlo. Risoluzione e riorganizzazione dell'itinerario in corso! ✈️⚠️
+                            </p>
                         </div>
-                        <p style="font-size:0.88rem; color:#78350f; line-height:1.5;">
-                            Valeria è inciampata e si è fatta male all'unghia dell'alluce. Applicato disinfettante e cerotto d'emergenza dalla farmacia di viaggio! 🩹🦶
-                        </p>
                     </div>
 
-                    <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#b45309; font-size:0.92rem;"><i class="fa-solid fa-pizza-slice"></i> Pizza a Bali & lo scampato pericolo di Giorgio</strong>
-                            <span class="badge badge-amber" style="font-size:0.68rem;">Food & Risate</span>
+                    <div class="diario-note diario-risk">
+                        <div class="diario-note-icon"><i class="fa-solid fa-bandage"></i></div>
+                        <div class="diario-note-body">
+                            <div class="diario-note-header">
+                                <strong class="diario-note-title">Piccolo Infortunio di Valeria</strong>
+                                <span class="badge badge-red" style="font-size:0.68rem;">Giava</span>
+                            </div>
+                            <p class="diario-note-text">
+                                Valeria è inciampata e si è fatta male all'unghia dell'alluce. Applicato disinfettante e cerotto d'emergenza dalla farmacia di viaggio! 🩹🦶
+                            </p>
                         </div>
-                        <p style="font-size:0.88rem; color:#78350f; line-height:1.5;">
-                            Provata la pizza a Bali... e Giorgio per un pelo non si è preso le "Bali belli"! 🍕😅
-                        </p>
                     </div>
 
-                    <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#b45309; font-size:0.92rem;"><i class="fa-solid fa-drumstick-bite"></i> Rendang & Babi Guling</strong>
-                            <span class="badge badge-amber" style="font-size:0.68rem;">Bali Food</span>
+                    <div class="diario-note diario-fun">
+                        <div class="diario-note-icon"><i class="fa-solid fa-pizza-slice"></i></div>
+                        <div class="diario-note-body">
+                            <div class="diario-note-header">
+                                <strong class="diario-note-title">Pizza a Bali & lo scampato pericolo di Giorgio</strong>
+                                <span class="badge badge-amber" style="font-size:0.68rem;">Food & Risate</span>
+                            </div>
+                            <p class="diario-note-text">
+                                Provata la pizza a Bali... e Giorgio per un pelo non si è preso le "Bali belli"! 🍕😅
+                            </p>
                         </div>
-                        <p style="font-size:0.88rem; color:#78350f; line-height:1.5;">
-                            Provati due piatti locali eccezionali: il Rendang (stufato di manzo piccante) e il Babi Guling (maialino allo spiedo balinese). Standing ovation per lo chef! 🍖🔥
-                        </p>
                     </div>
 
-                    <div style="background:var(--primary-light); border:1px solid var(--primary-border); border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:var(--primary-dark); font-size:0.92rem;"><i class="fa-solid fa-heart"></i> Menzione Speciale: Tude, l'Autista</strong>
-                            <span class="badge badge-green" style="font-size:0.68rem;">Amicizie di Viaggio</span>
+                    <div class="diario-note diario-food">
+                        <div class="diario-note-icon"><i class="fa-solid fa-drumstick-bite"></i></div>
+                        <div class="diario-note-body">
+                            <div class="diario-note-header">
+                                <strong class="diario-note-title">Rendang & Babi Guling</strong>
+                                <span class="badge badge-blue" style="font-size:0.68rem;">Bali Food</span>
+                            </div>
+                            <p class="diario-note-text">
+                                Provati due piatti locali eccezionali: il Rendang (stufato di manzo piccante) e il Babi Guling (maialino allo spiedo balinese). Standing ovation per lo chef! 🍖🔥
+                            </p>
                         </div>
-                        <p style="font-size:0.88rem; color:#065f46; line-height:1.5;">
-                            Menzione d'onore per Tude, il nostro autista! Vera e propria love story con Giorgio: i due hanno chiacchierato per ore in macchina, stringendo un'amicizia indimenticabile. 🚗❤️😂
-                        </p>
                     </div>
 
-                    <div style="background:var(--primary-light); border:1px solid var(--primary-border); border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:var(--primary-dark); font-size:0.92rem;"><i class="fa-solid fa-music"></i> Caspar e la Serata Disco in Barca</strong>
-                            <span class="badge badge-green" style="font-size:0.68rem;">Amicizie di Viaggio</span>
+                    <div class="diario-note diario-people">
+                        <div class="diario-note-icon"><i class="fa-solid fa-heart"></i></div>
+                        <div class="diario-note-body">
+                            <div class="diario-note-header">
+                                <strong class="diario-note-title">Menzione Speciale: Tude, l'Autista</strong>
+                                <span class="badge badge-green" style="font-size:0.68rem;">Amicizie di Viaggio</span>
+                            </div>
+                            <p class="diario-note-text">
+                                Menzione d'onore per Tude, il nostro autista! Vera e propria love story con Giorgio: i due hanno chiacchierato per ore in macchina, stringendo un'amicizia indimenticabile. 🚗❤️😂
+                            </p>
                         </div>
-                        <p style="font-size:0.88rem; color:#065f46; line-height:1.5;">
-                            Abbiamo conosciuto tanti ragazzi simpatici durante la crociera, ma una menzione speciale va a Caspar, un tedesco che metteva musica in qualsiasi momento e ci ha fatto vivere una vera serata disco in barca insieme alla crew (capitanata da Agu, il nostro capocrew)! 🎶🕺🚤
-                        </p>
                     </div>
 
-                    <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#b45309; font-size:0.92rem;"><i class="fa-solid fa-fish"></i> Vita Marina: Pesci, Tartarughe e Baby Shark</strong>
-                            <span class="badge badge-amber" style="font-size:0.68rem;">Snorkeling</span>
+                    <div class="diario-note diario-people">
+                        <div class="diario-note-icon"><i class="fa-solid fa-music"></i></div>
+                        <div class="diario-note-body">
+                            <div class="diario-note-header">
+                                <strong class="diario-note-title">Caspar e la Serata Disco in Barca</strong>
+                                <span class="badge badge-green" style="font-size:0.68rem;">Amicizie di Viaggio</span>
+                            </div>
+                            <p class="diario-note-text">
+                                Abbiamo conosciuto tanti ragazzi simpatici durante la crociera, ma una menzione speciale va a Caspar, un tedesco che metteva musica in qualsiasi momento e ci ha fatto vivere una vera serata disco in barca insieme alla crew (capitanata da Agu, il nostro capocrew)! 🎶🕺🚤
+                            </p>
                         </div>
-                        <p style="font-size:0.88rem; color:#78350f; line-height:1.5;">
-                            Durante lo snorkeling abbiamo visto tantissimi pesci, ma anche delle tartarughe marine e persino dei baby shark! 🐠🐢🦈
-                        </p>
                     </div>
 
-                    <div style="background:#fef2f2; border:1px solid #fca5a5; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#991b1b; font-size:0.92rem;"><i class="fa-solid fa-fire"></i> Scampato incendio a Bromo</strong>
-                            <span class="badge badge-red" style="font-size:0.68rem;">Karma Positivo</span>
+                    <div class="diario-note diario-nature">
+                        <div class="diario-note-icon"><i class="fa-solid fa-fish"></i></div>
+                        <div class="diario-note-body">
+                            <div class="diario-note-header">
+                                <strong class="diario-note-title">Vita Marina: Pesci, Tartarughe e Baby Shark</strong>
+                                <span class="badge badge-purple" style="font-size:0.68rem;">Snorkeling</span>
+                            </div>
+                            <p class="diario-note-text">
+                                Durante lo snorkeling abbiamo visto tantissimi pesci, ma anche delle tartarughe marine e persino dei baby shark! 🐠🐢🦈
+                            </p>
                         </div>
-                        <p style="font-size:0.88rem; color:#7f1d1d; line-height:1.5;">
-                            Scampato un incendio al Monte Bromo... noi ci eravamo andati proprio il giorno prima! 🔥🏔️😅🙏
-                        </p>
                     </div>
 
-                    <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#b45309; font-size:0.92rem;"><i class="fa-solid fa-dharmachakra"></i> La storia del Buddha</strong>
-                            <span class="badge badge-amber" style="font-size:0.68rem;">Curiosità</span>
+                    <div class="diario-note diario-risk">
+                        <div class="diario-note-icon"><i class="fa-solid fa-fire"></i></div>
+                        <div class="diario-note-body">
+                            <div class="diario-note-header">
+                                <strong class="diario-note-title">Scampato incendio a Bromo</strong>
+                                <span class="badge badge-red" style="font-size:0.68rem;">Karma Positivo</span>
+                            </div>
+                            <p class="diario-note-text">
+                                Scampato un incendio al Monte Bromo... noi ci eravamo andati proprio il giorno prima! 🔥🏔️😅🙏
+                            </p>
                         </div>
-                        <p style="font-size:0.88rem; color:#78350f; line-height:1.5;">
-                            Ci siamo raccontati la storia di Buddha: il principe che il padre re teneva rinchiuso nel palazzo per non fargli vedere quanto il mondo fuori fosse brutto. 🧘☸️📿
-                        </p>
                     </div>
 
-                    <div style="background:#fef2f2; border:1px solid #fca5a5; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#991b1b; font-size:0.92rem;"><i class="fa-solid fa-water"></i> Puntura di medusa per Valeria</strong>
-                            <span class="badge badge-red" style="font-size:0.68rem;">Snorkeling</span>
+                    <div class="diario-note diario-nature">
+                        <div class="diario-note-icon"><i class="fa-solid fa-dharmachakra"></i></div>
+                        <div class="diario-note-body">
+                            <div class="diario-note-header">
+                                <strong class="diario-note-title">La storia del Buddha</strong>
+                                <span class="badge badge-purple" style="font-size:0.68rem;">Curiosità</span>
+                            </div>
+                            <p class="diario-note-text">
+                                Ci siamo raccontati la storia di Buddha: il principe che il padre re teneva rinchiuso nel palazzo per non fargli vedere quanto il mondo fuori fosse brutto. 🧘☸️📿
+                            </p>
                         </div>
-                        <p style="font-size:0.88rem; color:#7f1d1d; line-height:1.5;">
-                            Una medusa ha punto Valeria durante uno snorkeling! 🎐🩹😖
-                        </p>
                     </div>
 
-                    <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#b45309; font-size:0.92rem;"><i class="fa-solid fa-dragon"></i> Piano di battaglia anti-drago di Komodo</strong>
-                            <span class="badge badge-amber" style="font-size:0.68rem;">Idee Assurde</span>
+                    <div class="diario-note diario-risk">
+                        <div class="diario-note-icon"><i class="fa-solid fa-water"></i></div>
+                        <div class="diario-note-body">
+                            <div class="diario-note-header">
+                                <strong class="diario-note-title">Puntura di medusa per Valeria</strong>
+                                <span class="badge badge-red" style="font-size:0.68rem;">Snorkeling</span>
+                            </div>
+                            <p class="diario-note-text">
+                                Una medusa ha punto Valeria durante uno snorkeling! 🎐🩹😖
+                            </p>
                         </div>
-                        <p style="font-size:0.88rem; color:#78350f; line-height:1.5;">
-                            Idea (teorica) per uccidere un drago di Komodo: fargli mordere una borsa e accecarlo con i pollici. 🐉👜👊😂
-                        </p>
                     </div>
 
-                    <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#b45309; font-size:0.92rem;"><i class="fa-solid fa-paw"></i> Piano di battaglia anti-100 scimmie</strong>
-                            <span class="badge badge-amber" style="font-size:0.68rem;">Idee Assurde</span>
+                    <div class="diario-note diario-fun">
+                        <div class="diario-note-icon"><i class="fa-solid fa-dragon"></i></div>
+                        <div class="diario-note-body">
+                            <div class="diario-note-header">
+                                <strong class="diario-note-title">Piano di battaglia anti-drago di Komodo</strong>
+                                <span class="badge badge-amber" style="font-size:0.68rem;">Idee Assurde</span>
+                            </div>
+                            <p class="diario-note-text">
+                                Idea (teorica) per uccidere un drago di Komodo: fargli mordere una borsa e accecarlo con i pollici. 🐉👜👊😂
+                            </p>
                         </div>
-                        <p style="font-size:0.88rem; color:#78350f; line-height:1.5;">
-                            Idea (teorica) per uccidere 100 scimmie: l'obiettivo è ammazzarne 1-2 e usare i cadaveri come armi contro le altre. 🐒💀😂
-                        </p>
                     </div>
 
-                    <div style="background:#fef2f2; border:1px solid #fca5a5; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#991b1b; font-size:0.92rem;"><i class="fa-solid fa-person-drowning"></i> Giorgio uomo di mare... si fa per dire</strong>
-                            <span class="badge badge-red" style="font-size:0.68rem;">Crociera Komodo</span>
+                    <div class="diario-note diario-fun">
+                        <div class="diario-note-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="diario-note-body">
+                            <div class="diario-note-header">
+                                <strong class="diario-note-title">Piano di battaglia anti-100 scimmie</strong>
+                                <span class="badge badge-amber" style="font-size:0.68rem;">Idee Assurde</span>
+                            </div>
+                            <p class="diario-note-text">
+                                Idea (teorica) per uccidere 100 scimmie: l'obiettivo è ammazzarne 1-2 e usare i cadaveri come armi contro le altre. 🐒💀😂
+                            </p>
                         </div>
-                        <p style="font-size:0.88rem; color:#7f1d1d; line-height:1.5;">
-                            Giorgio è caduto in barca almeno 3 volte, una volta anche bagnando il cellulare! ⛵💦📱😂
-                        </p>
                     </div>
 
-                    <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#b45309; font-size:0.92rem;"><i class="fa-solid fa-camera-retro"></i> La regola non scritta delle foto</strong>
-                            <span class="badge badge-amber" style="font-size:0.68rem;">Teorie di Viaggio</span>
+                    <div class="diario-note diario-fun">
+                        <div class="diario-note-icon"><i class="fa-solid fa-person-drowning"></i></div>
+                        <div class="diario-note-body">
+                            <div class="diario-note-header">
+                                <strong class="diario-note-title">Giorgio uomo di mare... si fa per dire</strong>
+                                <span class="badge badge-amber" style="font-size:0.68rem;">Crociera Komodo</span>
+                            </div>
+                            <p class="diario-note-text">
+                                Giorgio è caduto in barca almeno 3 volte, una volta anche bagnando il cellulare! ⛵💦📱😂
+                            </p>
                         </div>
-                        <p style="font-size:0.88rem; color:#78350f; line-height:1.5;">
-                            Se in una foto non c'è Giorgio = sta cagando. 📸🚽😂
-                        </p>
                     </div>
 
-                    <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius-md); padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                            <strong style="color:#b45309; font-size:0.92rem;"><i class="fa-solid fa-paw"></i> Animali avvistati: uno zoo intero tra terra e mare</strong>
-                            <span class="badge badge-amber" style="font-size:0.68rem;">Fauna Selvatica</span>
+                    <div class="diario-note diario-fun">
+                        <div class="diario-note-icon"><i class="fa-solid fa-camera-retro"></i></div>
+                        <div class="diario-note-body">
+                            <div class="diario-note-header">
+                                <strong class="diario-note-title">La regola non scritta delle foto</strong>
+                                <span class="badge badge-amber" style="font-size:0.68rem;">Teorie di Viaggio</span>
+                            </div>
+                            <p class="diario-note-text">
+                                Se in una foto non c'è Giorgio = sta cagando. 📸🚽😂
+                            </p>
                         </div>
-                        <p style="font-size:0.88rem; color:#78350f; line-height:1.5;">
-                            Viste una decina di tartarughe, barracuda, centinaia di specie di pesci diversi, long fish, baby shark, uccellini microscopici e scimmie! 🐢🐟🦈🐦🐒
-                        </p>
+                    </div>
+
+                    <div class="diario-note diario-nature">
+                        <div class="diario-note-icon"><i class="fa-solid fa-paw"></i></div>
+                        <div class="diario-note-body">
+                            <div class="diario-note-header">
+                                <strong class="diario-note-title">Animali avvistati: uno zoo intero tra terra e mare</strong>
+                                <span class="badge badge-purple" style="font-size:0.68rem;">Fauna Selvatica</span>
+                            </div>
+                            <p class="diario-note-text">
+                                Viste una decina di tartarughe, barracuda, centinaia di specie di pesci diversi, long fish, baby shark, uccellini microscopici e scimmie! 🐢🐟🦈🐦🐒
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
