@@ -2752,6 +2752,22 @@
             </div>
 
             <div class="card">
+                <h3 class="card-title" style="margin-bottom:4px;"><i class="fa-solid fa-chart-column" style="color:var(--primary);"></i> Spesa Giornaliera Reale (Gruppo)</h3>
+                <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:14px;">Confronto giorno per giorno delle spese di gruppo, con la media del periodo tracciato come riferimento.</p>
+                <div style="position: relative; height: 320px; width: 100%;">
+                    <canvas id="dailySpendChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title" style="margin-bottom:4px;"><i class="fa-solid fa-chart-pie" style="color:var(--primary);"></i> Distribuzione Spese per Categoria</h3>
+                <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:14px;">Come si suddividono i €1.540,81 di spese giornaliere reali tra le diverse categorie.</p>
+                <div style="position: relative; height: 320px; width: 100%;">
+                    <canvas id="categorySpendChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Dettaglio Spese Giornaliere</h3>
                     <span class="badge badge-purple" style="font-size:0.85rem; padding:6px 12px;">Tot. gruppo €1.540,81</span>
@@ -3595,6 +3611,9 @@
             if (tabId === 'tempi') {
                 setTimeout(initTimeChart, 100);
             }
+            if (tabId === 'spese') {
+                setTimeout(initSpeseCharts, 100);
+            }
 
             const navBtns = document.querySelectorAll('.nav-btn');
             navBtns.forEach(btn => btn.classList.remove('active'));
@@ -3969,6 +3988,128 @@
                                     const total = context.dataset.data.reduce((a, b) => a + b, 0);
                                     const pct = ((context.parsed / total) * 100).toFixed(1);
                                     return context.label.split(' (')[0] + ': ' + pct + '% del viaggio';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Chart.js Riepilogo Spese Logic
+        let speseChartsInitialized = false;
+        let dailySpendChart, categorySpendChart;
+
+        function initSpeseCharts() {
+            if (speseChartsInitialized) return;
+            speseChartsInitialized = true;
+
+            const dailyLabels = ['2 Ago', '3 Ago', '4 Ago', '5 Ago', '6 Ago', '7 Ago', '8 Ago', '9 Ago', '10 Ago', '12 Ago', '13 Ago', '14 Ago*'];
+            const dailyValues = [67.00, 109.31, 65.30, 24.28, 219.00, 197.35, 197.37, 222.82, 130.00, 84.86, 63.65, 159.87];
+            const dailyAvg = dailyValues.reduce((a, b) => a + b, 0) / dailyValues.length;
+
+            const dailyCtx = document.getElementById('dailySpendChart').getContext('2d');
+            dailySpendChart = new Chart(dailyCtx, {
+                data: {
+                    labels: dailyLabels,
+                    datasets: [
+                        {
+                            type: 'bar',
+                            label: 'Spesa del giorno',
+                            data: dailyValues,
+                            backgroundColor: '#059669',
+                            borderRadius: 4,
+                            maxBarThickness: 42
+                        },
+                        {
+                            type: 'line',
+                            label: 'Media giornaliera (€' + dailyAvg.toFixed(2).replace('.', ',') + ')',
+                            data: dailyLabels.map(() => dailyAvg),
+                            borderColor: '#94a3b8',
+                            borderDash: [6, 4],
+                            borderWidth: 2,
+                            pointRadius: 0,
+                            fill: false
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: '#e2e8f0' },
+                            ticks: { callback: (v) => '€' + v },
+                            title: {
+                                display: true,
+                                text: 'Spesa di gruppo (€)',
+                                font: { weight: 'bold' }
+                            }
+                        },
+                        x: {
+                            grid: { display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                font: { family: "'Plus Jakarta Sans', sans-serif", weight: 'bold', size: 11 },
+                                usePointStyle: true,
+                                padding: 12
+                            }
+                        },
+                        tooltip: {
+                            padding: 10,
+                            cornerRadius: 8,
+                            titleFont: { weight: 'bold' },
+                            callbacks: {
+                                label: (ctx) => ctx.dataset.label.split(' (')[0] + ': €' + ctx.parsed.y.toFixed(2).replace('.', ',')
+                            }
+                        }
+                    }
+                }
+            });
+
+            const categoryLabels = ['Tour & Escursioni', 'Pranzi', 'Trasferimenti', 'Cene', 'Varie (spa/lavanderia)', 'Trasporti locali (taxi/grab)', 'Bevande & Dolci'];
+            const categoryValues = [459.28, 332.44, 300.61, 246.93, 120.92, 50.08, 30.55];
+            const categoryColors = ['#2a78d6', '#eb6834', '#1baf7a', '#eda100', '#e87ba4', '#008300', '#4a3aa7'];
+
+            const categoryCtx = document.getElementById('categorySpendChart').getContext('2d');
+            categorySpendChart = new Chart(categoryCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: categoryLabels,
+                    datasets: [{
+                        data: categoryValues,
+                        backgroundColor: categoryColors,
+                        borderColor: '#ffffff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '58%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: { family: "'Plus Jakarta Sans', sans-serif", weight: 'bold', size: 11 },
+                                usePointStyle: true,
+                                padding: 12
+                            }
+                        },
+                        tooltip: {
+                            padding: 10,
+                            cornerRadius: 8,
+                            titleFont: { weight: 'bold' },
+                            callbacks: {
+                                label: function(context) {
+                                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                    const pct = ((context.parsed / total) * 100).toFixed(1);
+                                    return context.label + ': €' + context.parsed.toFixed(2).replace('.', ',') + ' (' + pct + '%)';
                                 }
                             }
                         }
